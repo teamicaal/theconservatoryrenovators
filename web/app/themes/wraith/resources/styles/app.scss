@@ -1,0 +1,15 @@
+@import 'tailwindcss/base';
+
+@import 'common/global';
+@import "components/buttons";
+@import "components/comments";
+@import "components/forms";
+@import "components/wp-classes";
+@import "layouts/header";
+@import "layouts/sidebar";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/posts";
+
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';

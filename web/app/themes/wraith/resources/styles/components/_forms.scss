@@ -1,0 +1,101 @@
+/** Search form */
+.search-form {
+  @apply flex items-center;
+}
+
+.search-form label {
+  @apply mb-4;
+
+  font-weight: normal;
+}
+
+.search-form .search-field {
+  @apply block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-grey-darker border border-grey rounded;
+}
+
+.search-form .search-submit {
+  @apply inline-block align-middle text-center select-none border font-normal whitespace-nowrap py-2 px-4 rounded text-base leading-normal no-underline text-grey-lightest bg-grey;
+
+  &:hover {
+    @apply bg-grey-light;
+  }
+}
+
+/*
+ * Inputs
+ */
+.icaal-contact-form input:not(.btn), .icaal-contact-form select, .icaal-contact-form textarea {
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.icaal-contact-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/*.icaal-contact-form input[name="postcode"] {*/
+    /*text-transform: uppercase;*/
+/*}*/
+
+.icaal-contact-form input[type="checkbox"] {
+    width: auto;
+}
+
+.icaal-contact-form .icaal-contact-form-wrap {
+    margin-bottom: .5em;
+}
+
+.icaal-contact-form input.is-valid, .icaal-contact-form select.is-valid, .icaal-contact-form textarea.is-valid {
+    border-color: #eee;
+}
+
+.icaal-contact-form input.is-invalid, .icaal-contact-form select.is-invalid, .icaal-contact-form textarea.is-invalid {
+    border-color: #a94442;
+}
+
+.icaal-contact-form .select-wrapper {
+    position: relative;
+}
+
+.icaal-contact-form .select-wrapper:before {
+    content: '\f0d7';
+    font-family: FontAwesome;
+    color: #999;
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 10%;
+    pointer-events: none;
+}
+
+.icaal-contact-form input[type="checkbox"] {
+    margin-right: 5px !important;
+    opacity: 1 !important;
+    position: static !important;
+    transform: translate(0, 0) !important;
+}
+
+.icaal-contact-form .icaal-contact-form-checkbox {
+    float: left;
+    padding-left: 5px;
+}
+
+/*
+ * Button
+ */
+
+
+.icaal-contact-form .btn.btn-loading, .icaal-contact-form .btn.btn-loading:hover {
+    background: #efefef;
+    border-color: #efefef;
+    color: #c8c8c8;
+}
+
+.icaal-contact-form .submit:hover {
+    cusor: pointer;
+}
