@@ -18,7 +18,7 @@
 }
 
 .comment-form input[type="submit"] {
-  @apply btn bg-grey-dark;
+  @apply text-sm bg-primary font-sans font-normal uppercase tracking-wide rounded-sm px-1-75 py-1-25 text-white leading-none bg-grey-dark;
 
   &:hover {
     @apply bg-grey-darker;

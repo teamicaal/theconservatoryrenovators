@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 
 @import 'common/global';
+@import "common/safelist.css";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
@@ -13,3 +14,6 @@
 
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@import "~slick-carousel/slick/slick.scss";
+@import "~slick-carousel/slick/slick-theme.scss";

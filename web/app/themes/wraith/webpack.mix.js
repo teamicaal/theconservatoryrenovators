@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 require('@tinypixelco/laravel-mix-wp-blocks');
+require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -22,6 +23,21 @@ mix
   .options({
     processCssUrls: false,
     postCss: [require('tailwindcss')],
+  })
+  .purgeCss({
+    enabled: mix.inProduction(),
+    folders: ['styles', 'views'],
+    extensions: ['html', 'js', 'php', 'vue'],
+    safelist: {
+      standard: [
+        'btn-toolbar',
+        'text-grey-light',
+        'nav-primary',
+        'nav-backdrop',
+        /menu$/,
+        /^slick-/,
+      ],
+    }
   });
 
 mix
@@ -38,3 +54,17 @@ mix
 mix
   .sourceMaps()
   .version();
+
+// mix.webpackConfig({
+//    stats: {
+//        children: true,
+//        errors: true,
+//        errorDetails: true,
+//        warnings: true,
+//        chunks: true,
+//        modules: false,
+//        reasons: true,
+//        source: true,
+//        publicPath: true,
+//    }
+//  });

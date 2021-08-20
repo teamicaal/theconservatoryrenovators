@@ -31,6 +31,10 @@ a {
   }
 }
 
+.container {
+  @apply px-1;
+}
+
 .title-display {
   @apply font-serif tracking-widest uppercase text-base relative;
 
