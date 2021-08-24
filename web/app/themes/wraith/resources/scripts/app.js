@@ -2,9 +2,6 @@
  * External Dependencies
  */
 import 'jquery';
-import Vue from 'vue';
-import VueRouter from 'vue-router'
-Vue.use(VueRouter);
 
 import lozad from 'lozad';
 const observer = lozad();
@@ -23,10 +20,10 @@ config.searchPseudoElements=true;
 library.add(faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faFacebook, faFacebookF, faTwitter, faInstagram, faYoutube, faPinterest, faLinkedin, faChevronDown, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare);
 dom.i2svg();
 
-import Shop from './views/Shop';
-
-const router = new VueRouter({
-  mode: 'history',
+import Vue from 'vue';
+import { vueRouter, createRouter, createWebHistory } from 'vue-router'
+createRouter({
+  history: createWebHistory('/shop'),
   routes: [
     {
       path: '/shop',
@@ -39,7 +36,8 @@ const router = new VueRouter({
   ]
 })
 
-const app = new Vue({
+import Shop from './views/Shop';
+import { createApp } from 'vue'
+createApp({
   components: { Shop },
-  router: router
-}).$mount('#shop');
+}).mount('#shop');
