@@ -1,55 +1,6 @@
-<p align="center">
-  <a href="https://roots.io/bedrock/">
-    <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">
-  </a>
-</p>
+# Wraith
 
-<p align="center">
-  <a href="LICENSE.md">
-    <img alt="MIT License" src="https://img.shields.io/github/license/roots/bedrock?color=%23525ddc&style=flat-square" />
-  </a>
-
-  <a href="https://packagist.org/packages/roots/bedrock">
-    <img alt="Packagist" src="https://img.shields.io/packagist/v/roots/bedrock.svg?style=flat-square" />
-  </a>
-
-  <a href="https://github.com/roots/bedrock/actions/workflows/ci.yml">
-    <img alt="Build Status" src="https://img.shields.io/github/workflow/status/roots/bedrock/CI?style=flat-square" />
-  </a>
-
-  <a href="https://twitter.com/rootswp">
-    <img alt="Follow Roots" src="https://img.shields.io/twitter/follow/rootswp.svg?style=flat-square&color=1da1f2" />
-  </a>
-</p>
-
-<p align="center">
-  <strong>A modern WordPress stack</strong>
-  <br />
-  Built with ❤️
-</p>
-
-<p align="center">
-  <a href="https://roots.io">Official Website</a> | <a href="https://roots.io/docs/bedrock/master/installation/">Documentation</a> | <a href="CHANGELOG.md">Change Log</a>
-</p>
-
-## Supporting
-
-**Bedrock** is an open source project and completely free to use.
-
-However, the amount of effort needed to maintain and develop new features and products within the Roots ecosystem is not sustainable without proper financial backing. If you have the capability, please consider donating using the links below:
-
-<div align="center">
-
-[![Donate via Patreon](https://img.shields.io/badge/donate-patreon-orange.svg?style=flat-square&logo=patreon")](https://www.patreon.com/rootsdev)
-[![Donate via PayPal](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square&logo=paypal)](https://www.paypal.me/rootsdev)
-
-</div>
-
-## Overview
-
-Bedrock is a modern WordPress stack that helps you get started with the best development tools and project structure.
-
-Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
+Wraith is built using the Roots stack of [Bedrock](https://roots.io/bedrock/) and [Sage](https://roots.io/sage/) (not Trellis).
 
 ## Features
 
@@ -59,57 +10,131 @@ Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](htt
 - Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
 - Autoloader for mu-plugins (use regular plugins as mu-plugins)
 - Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
+- Automatic compiling and syntax validation with [Webpack](https://webpack.github.io/) and [ESLint](https://eslint.org/)
+- Automatic updates in local evironment with [BrowserSync](https://browsersync.io/)
+- Easy package management with [Yarn](https://yarnpkg.com/)
+- Templating with [Laravel Blade](https://laravel.com/docs/8.x/blade)
+- Utility based [Tailwind CSS](https://tailwindcss.com/)
+- Easy control over js routes
+- Smaller dist css files with [PurgeCSS](https://purgecss.com/)
+- Cleaner WordPress outputted markup & more nice features with [Soil plugin](https://roots.io/plugins/soil/)
 
 ## Requirements
 
 - PHP >= 7.1
 - Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+- [Node.js](https://nodejs.org/en/) >=8.0.0
+- [Yarn](https://yarnpkg.com/)
 
-## Installation
+## Quick Install
 
-1. Create a new project:
-   ```sh
-   $ composer create-project roots/bedrock
-   ```
-2. Update environment variables in the `.env` file. Wrap values that may contain non-alphanumeric characters with quotes, or they may be incorrectly parsed.
+**Requirements**
+- [Gitub CLI](https://github.com/cli/cli#installation)
+- GitHub Command Line Tools (installed from GitHub Desktop app)
+- [wp dotenv CLI](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
+
+We have created a terminal command to help you get started with a new working repo in < 1 minute. It's recommdeded to set this up as a bash command, so you can specify a project name to run all commands. Some elements of these commands will change depending on your folder OS, folder structure and text editor of choice, but here's an example for [Atom](https://atom.io), using [Hyper](https://hyper.is) terminal':
+
+**Atom**
+```
+gh repo create teamicaal/$1 --private
+cd ~/Local\ Sites
+git clone --bare https://github.com/teamicaal/wraith-theme.git
+cd wraith-theme.git
+git push --mirror https://github.com/teamicaal/$1.git
+cd ..
+rm -rf wraith-theme.git
+git clone https://github.com/teamicaal/$1.git
+cd $1
+valet link $1
+github
+atom ~/Local\ Sites/$1
+open -a Hyper
+wp dotenv init --template=.env.example --with-salts
+wp dotenv set DB_NAME local_$1 --quote-single
+wp dotenv set DB_USER root --quote-single
+wp dotenv set DB_PASSWORD root --quote-single
+wp dotenv set WP_HOME http://$1.test --quote-single
+wp dotenv set ACF_PRO_KEY b3JkZXJfaWQ9Njc4NzZ8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTUtMTEtMDIgMTI6MDY6MjI= --quote-single
+composer install
+cd web/app/themes/wraith
+composer install
+yarn
+```
+
+Once this is done, you just need to set up a local database and run `yarn start` in the theme directory.
+
+## Manual Installation
+
+1. Create a new empty repository for your project in teamicaal. Make sure it's set to private.
+2. In Terminal, cd into your local GitHub create a bare clone of this repository
+  ```
+  $ git clone --bare https://github.com/teamicaal/wraith-theme.git
+  ```
+3. Mirror-push to the new repository
+  ```
+  $ cd wraith-theme.git
+  $ git push --mirror https://github.com/teamicaal/new-repository.git
+  ```
+4. Remove the temporary local repository you created earlier
+  ```
+  $ cd ..
+  $ rm -rf wraith-theme.git
+  ```
+5. Visit your new repository. Set the default branch to master, and remove any unnecessary branches
+6. Create a local database for your project and import it from the [theme dev site](https://wraith.icaal.dev)
+- If you're using [Laravel Valet](https://laravel.com/docs/8.x/valet)
+  ```
+  $ cd new-repository
+  $ valet link your-domain
+  ```
+7. Update environment variables in the `.env` file. Wrap values that may contain non-alphanumeric characters with quotes, or they may be incorrectly parsed. Note that we use `wr_` as the database prefix, as opposed to the default `wp_`
 
 - Database variables
   - `DB_NAME` - Database name
   - `DB_USER` - Database user
   - `DB_PASSWORD` - Database password
   - `DB_HOST` - Database host
-  - Optionally, you can define `DATABASE_URL` for using a DSN instead of using the variables above (e.g. `mysql://user:password@127.0.0.1:3306/db_name`)
 - `WP_ENV` - Set to environment (`development`, `staging`, `production`)
 - `WP_HOME` - Full URL to WordPress home (https://example.com)
 - `WP_SITEURL` - Full URL to WordPress including subdirectory (https://example.com/wp)
 - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
-  - Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
-  - Generate with [our WordPress salts generator](https://roots.io/salts.html)
+  - Generate with [Bedrock WordPress salts generator](https://roots.io/salts.html)
 
-3. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
-4. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
-5. Access WordPress admin at `https://example.com/wp/wp-admin/`
+If you need to host your database on a public server (e.g. s1.icaal.co.uk) set your `DB_HOST` to `127.0.0.1:5555`. You'll then need to open up an SSH tunnel to forward localhost requests to the server
+```
+$ ssh -N -L 5555:127.0.0.1:3306 dev@s1.icaal.co.uk -vv
+```
+
+8. Update the `devUrl` in `/web/app/themes/your-theme/resources/assets/config.json`
+9. In your project directory, update any dependencies
+  ```
+  $ composer install
+  ```
+10. Add the `uploads` folder from the [theme dev site](https://wraith.icaal.dev)
+11. In your theme directory, update any dependencies
+  ```
+  $ cd web/app/themes/your-theme
+  $ composer install
+  ```
+12. Build theme theme package with Yarn and start developing. BrowserSync will launch a proxy server at localhost:3000 and will Webpack will start watching for file changes.
+  ```
+  $ yarn
+  $ yarn start
+  ```
+13. Access WordPress admin at `https://example.com/wp/wp-admin/`
+
+14. Update the password for the default WordPress user
+
+15. Configure the WordPress settings as you would with any other website e.g. site title, tagline, search engine visibility, default categories etc.
+
+16. Run a search & replace on the database to update all instances of the old URL, and refresh your permalinks
+
+17. You can run the following commands in the theme directory to prep the files for distribution
+- `yarn build` - Build theme for quick distribution (recommended for pushing to staging server)
+- `yarn build:production` - Build theme and run optimise scripts defined in `/resources/assets/build/webpack.config.optimize.js`. By default this includes image optimisation for `/resources/assets`, UglifyJS, minifying CSS and PurgeCSS. This must be done for production servers.
 
 ## Documentation
 
 Bedrock documentation is available at [https://roots.io/docs/bedrock/master/installation/](https://roots.io/docs/bedrock/master/installation/).
-
-## Contributing
-
-Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
-
-## Bedrock sponsors
-
-Help support our open-source development efforts by [becoming a patron](https://www.patreon.com/rootsdev).
-
-<a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://cdn.roots.io/app/uploads/kinsta.svg" alt="Kinsta" width="200" height="150"></a> <a href="https://k-m.com/"><img src="https://cdn.roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a> <a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="200" height="150"></a> <a href="https://www.c21redwood.com/"><img src="https://cdn.roots.io/app/uploads/c21redwood.svg" alt="C21 Redwood Realty" width="200" height="150"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="200" height="150"></a> <a href="https://motto.ca/roots"><img src="https://cdn.roots.io/app/uploads/motto.svg" alt="Motto" width="200" height="150"></a>
-
-## Community
-
-Keep track of development and community news.
-
-- Participate on the [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read and subscribe to the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
-- Listen to the [Roots Radio podcast](https://roots.io/podcast/)
+Sage documentation is available at [https://roots.io/docs/sage/9.x/installation/](https://roots.io/docs/sage/9.x/installation/).
