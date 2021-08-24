@@ -14,14 +14,14 @@ Wraith is built using the Roots stack of [Bedrock](https://roots.io/bedrock/) an
 - Automatic updates in local evironment with [BrowserSync](https://browsersync.io/)
 - Easy package management with [Yarn](https://yarnpkg.com/)
 - Templating with [Laravel Blade](https://laravel.com/docs/8.x/blade)
-- Utility based [Tailwind CSS](https://tailwindcss.com/)
+- Utility based [Tailwind CSS](https://tailwindcss.com/) - v2.1.2
 - Easy control over js routes
 - Smaller dist css files with [PurgeCSS](https://purgecss.com/)
 - Cleaner WordPress outputted markup & more nice features with [Soil plugin](https://roots.io/plugins/soil/)
 
 ## Requirements
 
-- PHP >= 7.1
+- PHP >= 7.3
 - Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 - [Node.js](https://nodejs.org/en/) >=8.0.0
 - [Yarn](https://yarnpkg.com/)
