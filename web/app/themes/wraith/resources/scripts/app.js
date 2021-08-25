@@ -20,24 +20,24 @@ config.searchPseudoElements=true;
 library.add(faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faFacebook, faFacebookF, faTwitter, faInstagram, faYoutube, faPinterest, faLinkedin, faChevronDown, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare);
 dom.i2svg();
 
-import Vue from 'vue';
-import { vueRouter, createRouter, createWebHistory } from 'vue-router'
-createRouter({
-  history: createWebHistory('/shop'),
-  routes: [
-    {
-      path: '/shop',
-      name: 'index',
-      component: Shop,
-      meta: {
-        title: 'Shop'
-      }
-    }
-  ]
-})
-
-import Shop from './views/Shop';
-import { createApp } from 'vue'
-createApp({
-  components: { Shop },
-}).mount('#shop');
+// import Vue from 'vue';
+// import { vueRouter, createRouter, createWebHistory } from 'vue-router'
+// createRouter({
+//   history: createWebHistory('/shop'),
+//   routes: [
+//     {
+//       path: '/shop',
+//       name: 'index',
+//       component: Shop,
+//       meta: {
+//         title: 'Shop'
+//       }
+//     }
+//   ]
+// })
+//
+// import Shop from './views/Shop';
+// import { createApp } from 'vue'
+// createApp({
+//   components: { Shop },
+// }).mount('#shop');
