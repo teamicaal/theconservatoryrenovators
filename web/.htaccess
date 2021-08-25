@@ -1,0 +1,68 @@
+# Redirect http to https
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+
+# Redirect all single download items to archive
+RewriteEngine On
+RewriteRule ^(downloads/). /$1 [R,L]
+
+## STOP REFERRER SPAM
+RewriteCond %{HTTP_REFERER} semalt\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} www1.free-share-buttons\.top [NC,OR]
+RewriteCond %{HTTP_REFERER} buttons-for-website\.com [NC]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteRule .* - [F]
+
+# STRONG HTACCESS PROTECTION
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</Files>
+
+# DISABLE directory browsing
+Options All -Indexes
+
+# DISABLE access to wp-comments-post.php
+<Files "wp-comments-post.php">
+Order Allow,Deny
+Deny from all
+</Files>
+
+# Redirect register to the happiest place on earth
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^action=register$ [NC]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteRule ^wp-login.php$ http://www.disneyland.com? [L,R=301,NC]
+
+<Files "wp-signup.php">
+Order Allow,Deny
+Deny from all
+</Files>
+
+<Files "wp-config.php">
+Order Allow,Deny
+Deny from all
+</Files>
+
+<Files "readme.html">
+Order Allow,Deny
+Deny from all
+</Files>
+
+<Files "license.txt">
+Order Allow,Deny
+Deny from all
+</Files>
