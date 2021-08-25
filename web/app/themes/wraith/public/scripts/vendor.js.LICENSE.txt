@@ -1,0 +1,29 @@
+/*!
+ * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+
+/*!
+ * Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license (Commercial License)
+ */
+
+/*! lozad.js - v1.16.0 - 2020-09-06
+* https://github.com/ApoorvSaxena/lozad.js
+* Copyright (c) 2020 Apoorv Saxena; Licensed MIT */
+
+/**!
+ * MixItUp v3.3.1
+ * A high-performance, dependency-free library for animated filtering, sorting and more
+ * Build 94e0fbf6-cd0b-4987-b3c0-14b59b67b8a0
+ *
+ * @copyright Copyright 2014-2018 KunkaLabs Limited.
+ * @author    KunkaLabs Limited.
+ * @link      https://www.kunkalabs.com/mixitup/
+ *
+ * @license   Commercial use requires a commercial license.
+ *            https://www.kunkalabs.com/mixitup/licenses/
+ *
+ *            Non-commercial use permitted under same terms as CC BY-NC 3.0 license.
+ *            http://creativecommons.org/licenses/by-nc/3.0/
+ */
