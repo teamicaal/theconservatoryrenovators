@@ -353,7 +353,7 @@ a {
     padding-bottom: 100%;
   }
 
-  .object-cover {
+  .object-cover-absolute {
     @apply absolute inset-0 w-full h-full;
 
     object-fit: cover;

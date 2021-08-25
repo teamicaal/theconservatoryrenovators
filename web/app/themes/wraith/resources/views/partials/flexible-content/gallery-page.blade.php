@@ -27,7 +27,7 @@ foreach( $images as $image ) {
       @php $i++; @endphp
         <div class="w-1/2 lg:w-1/3 mb-1 px-0-5 gallery-image item fb-gallery mix {{ strtolower($image['caption']) }}">
           <a href="{{ $image['url'] }}" title="{{ $image['title'] }} ?>" rel="gallery-page" class="embed embed-4by3" data-fancybox="gallery" data-fancybox-group itemprop="contentUrl" data-size="{{ $image['width'] }}x{{ $image['height'] }}" data-index="{{ $i }}">
-            <img data-src="{{ $image['sizes']['4by3-md'] }}" alt="{{ $image['alt'] }}" class="lozad object-cover" />
+            <img data-src="{{ $image['sizes']['4by3-md'] }}" alt="{{ $image['alt'] }}" class="lozad object-cover-absolute" />
           </a>
         </div>
       @endforeach

@@ -45,7 +45,8 @@ mix
   .js('resources/scripts/customizer.js', 'scripts')
   .blocks('resources/scripts/editor.js', 'scripts')
   .autoload({ jquery: ['$', 'window.jQuery'] })
-  .extract();
+  .extract()
+  .vue({ version: 3 });
 
 mix
   .copyDirectory('resources/images', 'public/images')

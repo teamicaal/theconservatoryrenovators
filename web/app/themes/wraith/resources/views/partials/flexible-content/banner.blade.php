@@ -17,7 +17,7 @@ $paragraph = get_sub_field('paragraph');
     @foreach($images as $key=>$image )
       <div>
         <div class="relative banner-height {!! $key != 0 ? 'hidden' : null !!}" style="min-height: 75vh;">
-            <img src="{{ $image['url'] }}" srcset="{!! wp_get_attachment_image_srcset($image['id']) !!}" class="absolute object-cover w-full h-full inset-0" width="100%" height="100%">
+            <img src="{{ $image['url'] }}" srcset="{!! wp_get_attachment_image_srcset($image['id']) !!}" class="absolute object-cover-absolute w-full h-full inset-0" width="100%" height="100%">
         </div>
       </div>
     @endforeach
