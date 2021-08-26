@@ -1,9 +1,9 @@
 /* purgecss start ignore */
 .lozad {
   filter: blur(8px);
-}
 
-.lozad[data-loaded="true"] {
-  filter: none;
+  &[data-loaded="true"] {
+    filter: none;
+  }
 }
 /* purgecss end ignore */
