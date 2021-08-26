@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="container mx-auto">
-  <h1 class="pt-5 pb-3">Downloads</h1>
+<div class="container mx-auto mt-3 lg:mt-5">
+  <h1 class="py-3">Downloads</h1>
 </div>
 <div class="bg-grey-lightest pt-3 pb-2 md:pb-1">
   <div class="container mx-auto">
