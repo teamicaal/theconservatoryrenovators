@@ -25,7 +25,7 @@
               <a href="{!! the_permalink() !!}" class="uppercase font-display text-sm tracking-widest text-primary hover:text-black">View Post</a>
             </div>
             <div class="w-full sm:w-1/3 md:mr-1 relative" style="min-height: 200px;">
-              <img data-src="{!! get_the_post_thumbnail_url() !!}" width="100%" height="auto" alt="{!! the_title(); !!}" class="lozad object-cover w-full h-full absolute">
+              <img data-src="{!! get_the_post_thumbnail_url() !!}" src="{!! get_the_post_thumbnail_url('lozad') !!}" width="100%" height="auto" alt="{!! the_title(); !!}" class="lozad object-cover w-full h-full absolute">
             </div>
           </div>
         </article>
