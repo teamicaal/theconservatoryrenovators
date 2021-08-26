@@ -84,7 +84,7 @@ $(() => {
     if (!localStorage.getItem('cookie-notice-dismissed')) {
       var notice = this;
       setTimeout(function() {
-        notice.fadeIn();
+        notice.addClass('active');
       }, 1000);
     }
     this.addClass('cookie-notice');
@@ -92,7 +92,7 @@ $(() => {
   }
   $(document).on('click', '.cookie-notice-dismiss', function() {
     localStorage.setItem('cookie-notice-dismissed', true);
-    $(this).parents('.cookie-notice').fadeOut();
+    $(this).parents('.cookie-notice').removeClass('active');
   })
   $('#cookie-notice').CookieNotice();
 

@@ -113,7 +113,7 @@
         </nav>
       </div>
     </div>
-    <div id="cookie-notice" style="visibility: hidden; opacity: 0; pointer-events: none; height: 0;" class="md:fixed md:left-2 md:bottom-2 w-full transition">
+    <div id="cookie-notice" style="visibility: hidden; opacity: 0; pointer-events: none; z-index: -1;" class="relative md:fixed md:left-2 md:bottom-2 w-full transition">
       <div class="p-1 md:p-2 relative bg-white rounded-sm shadow-lg text-center md:text-left">
         <button class="cookie-notice-dismiss hidden md:inline-block text-grey-darkest hover:text-green transition focus:outline-none px-0-5 py-0-25 absolute top-1 right-1"><i class="fa fa-times fa-sm"></i></button>
         <p class="text-sm text-grey-dark mb-0 md:pr-1">
