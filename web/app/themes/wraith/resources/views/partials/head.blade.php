@@ -6,8 +6,8 @@ $script_schema_global = get_field('script_schema_global', 'option');
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preload" href="@asset('fonts/roboto/Roboto-Regular.woff2')" as="font" />
-  <link rel="preload" href="@asset('fonts/oswald/Oswald-Regular.woff2')" as="font" />
+  <link rel="preload" href="@asset('fonts/roboto/Roboto-Regular.woff')" as="font" />
+  <link rel="preload" href="@asset('fonts/oswald/Oswald-Regular.woff')" as="font" />
   @php wp_head() @endphp
   {!! $script_header ? $script_header : null !!}
   {!! $script_schema_global ? $script_schema_global : null !!}
