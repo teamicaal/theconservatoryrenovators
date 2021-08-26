@@ -79,6 +79,12 @@ $(() => {
     $(this).parent().prev().slick('slickNext');
   });
 
+  // Mixitup
+  var mixer = mixitup('.mix-container');
+  if(mixer) {
+    console.log('mix');
+  }
+
   // Cookie Policy
   $.fn.CookieNotice = function() {
     if (!localStorage.getItem('cookie-notice-dismissed')) {

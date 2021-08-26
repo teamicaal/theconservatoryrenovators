@@ -43,7 +43,7 @@
               <div class="bg-white rounded">
                 <div class="flex items-center">
                   <div style="width: 66px;">
-                    <div class="embed embed-7by10">
+                    <div class="embed embed-7by10 bg-grey-dark">
                       <img data-src="@if( $thumbnail ) {{ $thumbnail['url'] }} @else @asset('images/document-placeholder.jpg') @endif" class="lozad object-cover" width="66" height="auto" />
                     </div>
                   </div>

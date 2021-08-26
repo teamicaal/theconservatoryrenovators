@@ -29,7 +29,7 @@ observer.observe();
 
 import 'slick-carousel/slick/slick.min';
 import '@fancyapps/fancybox/dist/jquery.fancybox';
-import 'mixitup/dist/mixitup.min';
+import mixitup from 'mixitup';
 
 import './custom';
 
