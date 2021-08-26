@@ -1,5 +1,6 @@
 @php
 $images = get_sub_field('images');
+$images_webp = get_sub_field('images_webp');
 $title = get_sub_field('title');
 $subtitle = get_sub_field('subtitle');
 $paragraph = get_sub_field('paragraph');
@@ -15,17 +16,15 @@ $paragraph = get_sub_field('paragraph');
   <div class="lg:w-3/5 order-1 md:order-2 relative z-0">
     {!! count($images) > 1 ? '<div class="slick-banner relative z-10" style="top: 7px;">' : null; !!}
     @foreach($images as $key=>$image )
-    @php
-      $img_webp = get_bloginfo('url') . str_replace(array('jpg', 'jpeg', 'png'), 'webp', $image['url']);
-      $img_webp_sm = str_replace('.webp', '-sm.webp', $img_webp);
-    @endphp
       <div>
         <div class="relative banner-height {!! $key != 0 ? 'hidden' : null !!}" style="min-height: 75vh;">
           <picture>
-            @if( filter_var($img_webp_sm, FILTER_VALIDATE_URL) == TRUE )
+            @if( $images_webp )
+              @php
+                $img_webp = get_bloginfo('url') . str_replace(array('jpg', 'jpeg', 'png'), 'webp', $image['url']);
+                $img_webp_sm = str_replace('.webp', '-sm.webp', $img_webp);
+              @endphp
               <source media="(max-width: 767px)" data-srcset="{!! $img_webp_sm !!}" />
-            @endif
-            @if( filter_var($img_webp, FILTER_VALIDATE_URL) == TRUE )
               <source media="(min-width: 768px)" data-srcset="{!! $img_webp !!}" />
             @endif
             <img src="{{ $image['sizes']['lozad'] }}" data-srcset="{!! wp_get_attachment_image_srcset($image['id']) !!}" class="lozad absolute object-cover-absolute w-full h-full inset-0" width="100%" height="100%">
