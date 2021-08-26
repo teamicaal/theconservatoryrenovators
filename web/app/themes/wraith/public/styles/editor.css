@@ -1,13 +1,1 @@
-.block-editor-block-list__layout {
 
-    font-family: Roboto, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-}
-
-.wp-block {
-
-    max-width: 768px
-}
-.wp-block.editor-post-title__block .editor-post-title__input {
-
-    font-family: Roboto, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important
-}
