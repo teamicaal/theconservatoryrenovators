@@ -30,10 +30,6 @@ $paragraph = get_sub_field('paragraph');
             @endif
             <img src="{{ $image['sizes']['lozad'] }}" data-srcset="{!! wp_get_attachment_image_srcset($image['id']) !!}" class="lozad absolute object-cover-absolute w-full h-full inset-0" width="100%" height="100%">
           </picture>
-          @php
-          echo '<p>' . $img_webp_sm . '</p>';
-          echo '<p>' . $img_webp . '</p>';
-          @endphp
         </div>
       </div>
     @endforeach
