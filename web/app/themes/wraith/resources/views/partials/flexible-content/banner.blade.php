@@ -27,6 +27,7 @@ $paragraph = get_sub_field('paragraph');
               <source media="(max-width: 767px)" data-srcset="{!! $img_webp_sm !!}" type="image/webp" />
               <source media="(min-width: 768px)" data-srcset="{!! $img_webp !!}" type="image/webp" />
             @endif
+            <img src="{{ $image['sizes']['lozad'] }}" class="lozad absolute object-cover-absolute w-full h-full inset-0" width="100%" height="100%">
           </picture>
         </div>
       </div>
