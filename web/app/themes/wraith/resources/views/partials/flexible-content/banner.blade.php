@@ -28,7 +28,7 @@ $paragraph = get_sub_field('paragraph');
               <source media="(min-width: 768px)" data-srcset="{!! $img_webp !!}" type="image/webp" />
               <source data-srcset="{!! wp_get_attachment_image_srcset($image['id']) !!}" type="image/jpg" />
             @endif
-            <img src="{{ $image['sizes']['lozad'] }}" data-srcset="{!! wp_get_attachment_image_srcset($image['id']) !!}" class="lozad absolute object-cover-absolute w-full h-full inset-0" width="100%" height="100%">
+            <img src="{{ $image['sizes']['lozad'] }}" class="lozad absolute object-cover-absolute w-full h-full inset-0" width="100%" height="100%">
           </picture>
         </div>
       </div>
