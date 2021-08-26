@@ -16,8 +16,8 @@ $paragraph = get_sub_field('paragraph');
     {!! count($images) > 1 ? '<div class="slick-banner relative z-10" style="top: 7px;">' : null; !!}
     @foreach($images as $key=>$image )
     @php
-      $img_webp = str_replace('jpg', 'webp', $image['url']);
-      $img_webp_sm = str_replace('.jpg', '-sm.jpg', $img_webp);
+      $img_webp = str_replace(array('jpg', 'jpeg', 'png'), 'webp', $image['url']);
+      $img_webp_sm = str_replace(array('jpg', 'jpeg', 'png'), '-sm.jpg', $img_webp);
     @endphp
       <div>
         <div class="relative banner-height {!! $key != 0 ? 'hidden' : null !!}" style="min-height: 75vh;">
