@@ -19,7 +19,7 @@ $subtitle = get_sub_field('subtitle');
           @if( $page )
             <div class="w-16 lg:w-1/3 mb-1 px-1 scroll-align-start mb-2" style="flex: 0 0 auto;">
               <a href="{{ get_the_permalink($page->ID) }}" class="embed embed-4by3 rounded-sm mb-1">
-                <img data-src="{{ get_the_post_thumbnail_url($page->ID) }}" src="" alt="{!! $custom_title ? $custom_title : $page->title; !!}" class="lozad object-cover-absolute" />
+                <img data-src="{{ get_the_post_thumbnail_url($page->ID) }}" src="{{ get_the_post_thumbnail_url($page->ID, 'lozad') }}" alt="{!! $custom_title ? $custom_title : $page->title; !!}" class="lozad object-cover-absolute" />
               </a>
               <div class="bg-white p-1 sm:p-2 p-md-3">
                 <h4 class="text-2xl mb-1">{!! $custom_title ? $custom_title : get_the_title(); !!}</h4>

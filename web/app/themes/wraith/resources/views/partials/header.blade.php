@@ -94,12 +94,12 @@
         {!! $brand_phone ? '<a href="tel:' . $brand_phone . '" class="lg:hidden p-0-5 -ml-0-5"><i class="fa fa-phone"></i></a>' : null; !!}
         <a class="brand border-0" href="{{ home_url('/') }}">
           @if( $logo )
-          <img data-src="{!! $logo['url'] !!}" alt="{!! get_bloginfo('name', 'display') !!} Logo"{!! $logo_retina ? ' data-srcset="' . $logo['url'] . ' 1x, ' . $logo_retina['url'] . ' 2x"' : null !!} width="auto" height="50" class="lozad hidden lg:inline-block">
+          <img src="{!! $logo['url'] !!}" alt="{!! get_bloginfo('name', 'display') !!} Logo"{!! $logo_retina ? ' srcset="' . $logo['url'] . ' 1x, ' . $logo_retina['url'] . ' 2x"' : null !!} width="auto" height="50" class="hidden lg:inline-block">
           @else
           {{ get_bloginfo('name', 'display') }}
           @endif
           @if( $icon )
-          <img data-src="{!! $icon['url'] !!}" alt="{!! get_bloginfo('name', 'display') !!} Logo"{!! $icon_retina ? ' data-srcset="' . $icon['url'] . ' 1x, ' . $icon_retina['url'] . ' 2x"' : null !!} width="32" height="32" class="lozad lg:hidden">
+          <img src="{!! $icon['url'] !!}" alt="{!! get_bloginfo('name', 'display') !!} Logo"{!! $icon_retina ? ' srcset="' . $icon['url'] . ' 1x, ' . $icon_retina['url'] . ' 2x"' : null !!} width="32" height="32" class="lg:hidden">
           @else
           {{ get_bloginfo('name', 'display') }}
           @endif

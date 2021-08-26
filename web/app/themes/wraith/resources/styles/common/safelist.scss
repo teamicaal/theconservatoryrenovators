@@ -1,5 +1,5 @@
 /* purgecss start ignore */
-.lozad {
+.lozad:not(.noblur) {
   filter: blur(8px);
 
   &[data-loaded="true"] {
