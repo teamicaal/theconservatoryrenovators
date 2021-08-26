@@ -24,8 +24,9 @@ $paragraph = get_sub_field('paragraph');
                 $img_webp = get_bloginfo('url') . str_replace(array('jpg', 'jpeg', 'png'), 'webp', $image['url']);
                 $img_webp_sm = str_replace('.webp', '-sm.webp', $img_webp);
               @endphp
-              <source media="(max-width: 767px)" data-srcset="{!! $img_webp_sm !!}" />
-              <source media="(min-width: 768px)" data-srcset="{!! $img_webp !!}" />
+              <source media="(max-width: 767px)" data-srcset="{!! $img_webp_sm !!}" type="image/webp" />
+              <source media="(min-width: 768px)" data-srcset="{!! $img_webp !!}" type="image/webp" />
+              <source data-srcset="{!! wp_get_attachment_image_srcset($image['id']) !!}" type="image/jpg" />
             @endif
             <img src="{{ $image['sizes']['lozad'] }}" data-srcset="{!! wp_get_attachment_image_srcset($image['id']) !!}" class="lozad absolute object-cover-absolute w-full h-full inset-0" width="100%" height="100%">
           </picture>
