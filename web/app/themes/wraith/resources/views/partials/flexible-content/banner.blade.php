@@ -23,7 +23,6 @@ $paragraph = get_sub_field('paragraph');
               @php
                 $img_webp = get_bloginfo('url') . str_replace(array('jpg', 'jpeg', 'png'), 'webp', $image['url']);
                 $img_webp_sm = str_replace('.webp', '-sm.webp', $img_webp);
-                $img_avif_sm = str_replace('webp', 'avif', $img_webp_sm);
               @endphp
               <source media="(max-width: 767px)" srcset="{!! $img_avif_sm !!}" type="image/avif" />
               <source media="(max-width: 767px)" srcset="{!! $img_webp_sm !!}" type="image/webp" />
