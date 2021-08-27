@@ -18,6 +18,10 @@ $paragraph = get_sub_field('paragraph');
     @foreach($images as $key=>$image )
       <div>
         <div class="relative banner-height {!! $key != 0 ? 'hidden' : null !!}" style="min-height: 75vh;">
+          @php
+            $img_webp = get_bloginfo('url') . str_replace(array('jpg', 'jpeg', 'png'), 'webp', $image['url']);
+            $img_webp_sm = str_replace('.webp', '-sm.webp', $img_webp);
+          @endphp
           <link rel="preload" href="{!! $img_webp_sm !!}" as="image" />
           <picture data-iesrc="{!! $image['url'] !!}">
             @if( $images_webp )
