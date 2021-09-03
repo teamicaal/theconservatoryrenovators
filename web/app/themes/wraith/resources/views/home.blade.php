@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto py-2 sm:py-3 lg:pt-5">
   @include('partials.page-header')
-  <p class="mb-0 font-medium">The lastest news from {{ get_bloginfo('name') }}</p>
+  <p class="mb-0 font-medium">The latest news from {{ get_bloginfo('name') }}</p>
   @if (!have_posts())
     <div class="alert alert-warning">
       {{ __('Sorry, no results were found.', 'sage') }}
