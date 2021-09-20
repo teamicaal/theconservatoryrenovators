@@ -39,11 +39,11 @@ We have created a terminal command to help you get started with a new working re
 ```
 gh repo create teamicaal/$1 --private
 cd ~/Local\ Sites
-git clone --bare https://github.com/teamicaal/wraith-theme.git
-cd wraith-theme.git
+git clone --bare https://github.com/teamicaal/wraith.git
+cd wraith.git
 git push --mirror https://github.com/teamicaal/$1.git
 cd ..
-rm -rf wraith-theme.git
+rm -rf wraith.git
 git clone https://github.com/teamicaal/$1.git
 cd $1
 valet link $1
@@ -69,17 +69,17 @@ Once this is done, you just need to set up a local database and run `yarn start`
 1. Create a new empty repository for your project in teamicaal. Make sure it's set to private.
 2. In Terminal, cd into your local GitHub create a bare clone of this repository
   ```
-  $ git clone --bare https://github.com/teamicaal/wraith-theme.git
+  $ git clone --bare https://github.com/teamicaal/wraith.git
   ```
 3. Mirror-push to the new repository
   ```
-  $ cd wraith-theme.git
+  $ cd wraith.git
   $ git push --mirror https://github.com/teamicaal/new-repository.git
   ```
 4. Remove the temporary local repository you created earlier
   ```
   $ cd ..
-  $ rm -rf wraith-theme.git
+  $ rm -rf wraith.git
   ```
 5. Visit your new repository. Set the default branch to master, and remove any unnecessary branches
 6. Create a local database for your project and import it from the [theme dev site](https://wraith.icaal.dev)
