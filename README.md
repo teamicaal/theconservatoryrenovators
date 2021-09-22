@@ -106,7 +106,7 @@ If you need to host your database on a public server (e.g. s1.icaal.co.uk) set y
 $ ssh -N -L 5555:127.0.0.1:3306 dev@s1.icaal.co.uk -vv
 ```
 
-8. Update the `devUrl` in `/web/app/themes/your-theme/resources/assets/config.json`
+8. Update the `.browserSync` in `/web/app/themes/your-theme/webpack.mix.js`
 9. In your project directory, update any dependencies
   ```
   $ composer install
