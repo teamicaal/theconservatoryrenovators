@@ -36,6 +36,7 @@ mix
         'nav-backdrop',
         /menu$/,
         /^slick-/,
+        /^fancybox-/
       ],
     }
   });

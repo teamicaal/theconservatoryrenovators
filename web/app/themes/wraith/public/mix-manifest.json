@@ -1,10 +1,10 @@
 {
-    "/scripts/app.js": "/scripts/app.js?id=c71d65fc321219fb3aae",
+    "/scripts/app.js": "/scripts/app.js?id=47d3637fdd665d3a17f3",
     "/scripts/customizer.js": "/scripts/customizer.js?id=a69e65b0c2300d2f8d72",
     "/scripts/editor.js": "/scripts/editor.js?id=d4f275ba6b0d85d219a5",
-    "/scripts/manifest.js": "/scripts/manifest.js?id=d5f1207d40d1cda91f26",
+    "/scripts/manifest.js": "/scripts/manifest.js?id=7ddef74a473ef39f5a41",
+    "/styles/app.css": "/styles/app.css?id=a9164caaf289f5d5b12e",
     "/styles/editor.css": "/styles/editor.css?id=68b329da9893e34099c7",
-    "/styles/app.css": "/styles/app.css?id=9ae6776832ee68f14a24",
     "/scripts/vendor.js": "/scripts/vendor.js?id=c4ea95093c2c7317b1f3",
     "/images/document-placeholder.jpg": "/images/document-placeholder.jpg?id=110d4e2525f6cc53780f"
 }
