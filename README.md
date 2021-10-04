@@ -69,24 +69,24 @@ Once this is done, you just need to set up a local database and run `yarn start`
 1. Create a new empty repository for your project in teamicaal. Make sure it's set to private.
 2. In Terminal, cd into your local GitHub create a bare clone of this repository
   ```
-  $ git clone --bare https://github.com/teamicaal/wraith.git
+  git clone --bare https://github.com/teamicaal/wraith.git
   ```
 3. Mirror-push to the new repository
   ```
-  $ cd wraith.git
-  $ git push --mirror https://github.com/teamicaal/new-repository.git
+  cd wraith.git
+  git push --mirror https://github.com/teamicaal/new-repository.git
   ```
 4. Remove the temporary local repository you created earlier
   ```
-  $ cd ..
-  $ rm -rf wraith.git
+  cd ..
+  rm -rf wraith.git
   ```
 5. Visit your new repository. Set the default branch to master, and remove any unnecessary branches
 6. Create a local database for your project and import it from the [theme dev site](https://wraith.icaal.dev)
 - If you're using [Laravel Valet](https://laravel.com/docs/8.x/valet)
   ```
-  $ cd new-repository
-  $ valet link your-domain
+  cd new-repository
+  valet link your-domain
   ```
 7. Update environment variables in the `.env` file. Wrap values that may contain non-alphanumeric characters with quotes, or they may be incorrectly parsed. Note that we use `wr_` as the database prefix, as opposed to the default `wp_`
 
@@ -103,24 +103,24 @@ Once this is done, you just need to set up a local database and run `yarn start`
 
 If you need to host your database on a public server (e.g. s1.icaal.co.uk) set your `DB_HOST` to `127.0.0.1:5555`. You'll then need to open up an SSH tunnel to forward localhost requests to the server
 ```
-$ ssh -N -L 5555:127.0.0.1:3306 dev@s1.icaal.co.uk -vv
+ssh -N -L 5555:127.0.0.1:3306 dev@s1.icaal.co.uk -vv
 ```
 
 8. Update the `.browserSync` in `/web/app/themes/your-theme/webpack.mix.js`
 9. In your project directory, update any dependencies
   ```
-  $ composer install
+  composer install
   ```
 10. Add the `uploads` folder from the [theme dev site](https://wraith.icaal.dev)
 11. In your theme directory, update any dependencies
   ```
-  $ cd web/app/themes/your-theme
-  $ composer install
+  cd web/app/themes/your-theme
+  composer install
   ```
 12. Build theme theme package with Yarn and start developing. BrowserSync will launch a proxy server at localhost:3000 and will Webpack will start watching for file changes.
   ```
-  $ yarn
-  $ yarn start
+  yarn
+  yarn start
   ```
 13. Access WordPress admin at `https://example.com/wp/wp-admin/`
 
