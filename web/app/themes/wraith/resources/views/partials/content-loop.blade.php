@@ -8,6 +8,9 @@
     @if( get_row_layout() == 'accreditations_row' )
       @include('partials.flexible-content.accreditations-row')
     @endif
+    @if( get_row_layout() == 'alternating_content' )
+      @include('partials.flexible-content.alternating-content')
+    @endif
     @if( get_row_layout() == 'text_block' )
       @include('partials.flexible-content.text-block')
     @endif
