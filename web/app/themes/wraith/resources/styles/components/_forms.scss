@@ -99,3 +99,29 @@
 .icaal-contact-form .submit:hover {
     cusor: pointer;
 }
+
+// Landing Page Form
+.form-pane {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+.form-pane-option {
+  &.active {
+    border-color: #38c172;
+  }
+}
+.progress-bar-wrap {
+  height: 6px;
+  background-color: #ededed;
+
+  .progress-bar {
+    background-color: #38c172;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    transition: all .25s ease-in-out;
+  }
+}
