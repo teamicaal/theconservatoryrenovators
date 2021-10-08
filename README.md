@@ -134,6 +134,9 @@ ssh -N -L 5555:127.0.0.1:3306 dev@s1.icaal.co.uk -vv
 - `yarn build` - Build theme for quick distribution (recommended for pushing to staging server)
 - `yarn build:production` - Build theme and run optimise scripts defined in `/resources/assets/build/webpack.config.optimize.js`. By default this includes image optimisation for `/resources/assets`, UglifyJS, minifying CSS and PurgeCSS. This must be done for production servers.
 
+## Template Designs
+[XD Prototype](https://xd.adobe.com/view/ea1dcfa0-7040-40f3-97fd-9483e7c47c3b-bf4e/)
+
 ## Documentation
 
 Bedrock documentation is available at [https://roots.io/docs/bedrock/master/installation/](https://roots.io/docs/bedrock/master/installation/).
