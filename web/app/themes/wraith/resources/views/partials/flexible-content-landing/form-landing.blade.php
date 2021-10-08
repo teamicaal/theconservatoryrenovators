@@ -191,6 +191,7 @@
       $('.pane-option-response').text('');
     });
 
+    // Remove the need for continue button on mobile
     if ($(window).width() < 576) {
 
       $('.conversion-form .form-pane-option').click(function() {
