@@ -111,7 +111,7 @@ ssh -N -L 5555:127.0.0.1:3306 dev@s1.icaal.co.uk -vv
   ```
   composer install
   ```
-10. Add the `uploads` folder from the [theme dev site](https://wraith.icaal.dev)
+10. Add the `uploads` folder from the [theme dev site](https://wraith.themes.icaal.co.uk)
 11. In your theme directory, update any dependencies
   ```
   cd web/app/themes/your-theme
