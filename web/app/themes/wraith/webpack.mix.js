@@ -15,7 +15,7 @@ require('laravel-mix-purgecss');
 
 mix
   .setPublicPath('./public')
-  .browserSync('wraith-new.test');
+  .browserSync('wraith.test');
 
 mix
   .sass('resources/styles/app.scss', 'styles')

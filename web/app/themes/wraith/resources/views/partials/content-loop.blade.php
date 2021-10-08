@@ -32,6 +32,9 @@
     @if( get_row_layout() == 'latest_news' )
       @include('partials.flexible-content.latest-news')
     @endif
+    @if( get_row_layout() == 'text_cta')
+      @include('partials.flexible-content.text-cta')
+    @endif
     @if( get_row_layout() == 'html' )
       {!! get_sub_field('html_content') !!}
     @endif
