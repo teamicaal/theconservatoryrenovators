@@ -50,7 +50,7 @@
                               $label = get_sub_field('label');
                             @endphp
                               <div class="w-full sm:w-1/2">
-                                <div class="form-pane-option @php echo $j == $count_form_options ? null : 'mb-0-5 sm:mb-1' @endphp px-2 py-1 text-left bg-white mb-0-5 sm:mb-1 mr-1 border-primary rounded-lg border border-grey-dark hover:border-primary cursor-pointer" data-name="step_{{ $i }}" data-value="{{ $label }}" data-pane="{{ $i }}">
+                                <div class="form-pane-option @php echo $j == $count_form_options ? null : 'mb-0-5 sm:mb-1' @endphp px-2 py-1 md:py-1-5 text-left bg-white mb-0-5 sm:mb-1 mr-1 border-primary rounded-lg border border-grey-dark hover:border-primary cursor-pointer" data-name="step_{{ $i }}" data-value="{{ $label }}" data-pane="{{ $i }}">
                                   <h5 class="mb-0 lg:text-xl text-lg">{{ $label }}</h5>
                                   <span class="text-grey text-sm">Select this option</span>
                                 </div>
