@@ -246,12 +246,9 @@
         $increment = pane - $active.index();
       }
 
-      console.log($active.index());
-
       var $activeIndex = $active.index() + 1;
 
       $progressBar.css('width', $progressBarInterval * $activeIndex + '%')
-
       $active.removeClass('active');
       $next.addClass('active');
 
