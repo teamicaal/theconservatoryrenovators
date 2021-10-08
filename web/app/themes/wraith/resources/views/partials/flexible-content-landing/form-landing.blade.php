@@ -33,19 +33,24 @@
                           </div>
                           <div class="w-2/5 flex items-center justify-end">
                             <div class="bg-white rounded-lg">
-                              <span class="py-1 px-1 md:px-2 text-md block font-bold text-grey-darker">STEP {{$i}}</span>
+                              <span class="py-1 px-1 md:px-2 text-md block font-bold text-grey-darker text-sm md:text-base">STEP {{$i}}</span>
                             </div>
                           </div>
                         </div>
                         <div class="">
                           <div class="flex flex-wrap">
+                            @php
+                              $count_form_options = count( get_sub_field('form_options') );
+                              $j = 0;
+                            @endphp
                             @while (have_rows('form_options'))
                             @php
                               the_row();
+                              $j++;
                               $label = get_sub_field('label');
                             @endphp
                               <div class="w-full sm:w-1/2">
-                                <div class="form-pane-option px-2 py-1 text-left bg-white mb-0-5 sm:mb-1 mr-1 border-primary rounded-lg border border-grey-dark hover:border-primary cursor-pointer" data-name="step_{{ $i }}" data-value="{{ $label }}" data-pane="{{ $i }}">
+                                <div class="form-pane-option @php echo $j == $count_form_options ? null : 'mb-0-5 sm:mb-1' @endphp px-2 py-1 md:py-1-5 text-left bg-white mb-0-5 sm:mb-1 mr-1 border-primary rounded-lg border border-grey-dark hover:border-primary cursor-pointer" data-name="step_{{ $i }}" data-value="{{ $label }}" data-pane="{{ $i }}">
                                   <h5 class="mb-0 lg:text-xl text-lg">{{ $label }}</h5>
                                   <span class="text-grey text-sm">Select this option</span>
                                 </div>
@@ -53,7 +58,7 @@
                             @endwhile
                           </div>
                           <h6 class="pane-option-response mb-0 text-red text-sm"></h6>
-                          <div class="pr-1 mt-1">
+                          <div class="pr-1 mt-1 hidden sm:block">
                             <button type="button" class="w-full rounded btn bg-green text-white form-pane-submit">CONTINUE</button>
                           </div>
                         </div>
@@ -68,7 +73,7 @@
                         </div>
                         <div class="w-2/5 flex items-center justify-end">
                           <div class="bg-white rounded-lg">
-                            <span class="py-1 px-1 md:px-2 text-md block font-bold text-grey-darker">STEP {{$i + 1}}</span>
+                            <span class="py-1 px-1 md:px-2 text-md block font-bold text-grey-darker text-sm md:text-base">STEP {{$i + 1}}</span>
                           </div>
                         </div>
                       </div>
@@ -96,7 +101,7 @@
                         </div>
                         <div class="w-2/5 flex items-center justify-end">
                           <div class="bg-white rounded-lg">
-                            <span class="py-1 px-1 md:px-2 text-md block font-bold text-grey-darker">STEP {{$i + 2}}</span>
+                            <span class="py-1 px-1 md:px-2 text-md block font-bold text-grey-darker text-sm md:text-base">FINAL STEP</span>
                           </div>
                         </div>
                       </div>
@@ -113,7 +118,7 @@
                         <div class="pr-1">
                           <div class="flex justify-between items-center mb-1">
                             <h6 class="text-grey-dark mb-0 text-sm"><svg class="fill-current inline-block" enable-background="new 0 0 24 24" height="16px" width="16px" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m18.75 9h-.75v-3c0-3.309-2.691-6-6-6s-6 2.691-6 6v3h-.75c-1.24 0-2.25 1.009-2.25 2.25v10.5c0 1.241 1.01 2.25 2.25 2.25h13.5c1.24 0 2.25-1.009 2.25-2.25v-10.5c0-1.241-1.01-2.25-2.25-2.25zm-10.75-3c0-2.206 1.794-4 4-4s4 1.794 4 4v3h-8zm5 10.722v2.278c0 .552-.447 1-1 1s-1-.448-1-1v-2.278c-.595-.347-1-.985-1-1.722 0-1.103.897-2 2-2s2 .897 2 2c0 .737-.405 1.375-1 1.722z"/></svg> Your information is data protected.</h6>
-                            <a class="text-sm" href="/privacy-policy/" target="_blank">Privacy Policy</a>
+                            <a class="text-sm text-right" href="/privacy-policy/" target="_blank">Privacy Policy</a>
                           </div>
                           <button type="submit" class="submit-conversion-form w-full rounded p-1 bg-green text-white">GET MY QUOTE</button>
                         </div>
@@ -128,7 +133,7 @@
                         </div>
                         <div class="w-2/5 flex items-center justify-end">
                           <div class="bg-white rounded-lg">
-                            <span class="py-1 px-1 md:px-2 text-md block font-bold text-grey-darker">STEP {{$i + 2}}</span>
+                            <span class="py-1 px-1 md:px-2 text-md block font-bold text-grey-darker text-sm md:text-base">THANK YOU</span>
                           </div>
                         </div>
                       </div>
@@ -174,7 +179,7 @@
 
   jQuery(function($){
 
-    var $formPaneCount = $('.form-pane').length;
+    var $formPaneCount = $('.form-pane').length - 1;
     var $progressBarInterval = 100 / $formPaneCount;
     var $progressBar = $('.progress-bar');
     $progressBar.css('width', $progressBarInterval + '%');
@@ -186,25 +191,48 @@
       $('.pane-option-response').text('');
     });
 
-    $('.conversion-form .form-pane-submit').click(function() {
+    // Remove the need for continue button on mobile
+    if ($(window).width() < 576) {
 
-      var name = $('.conversion-form .form-pane-option.active').data('name');
-      var value = $('.conversion-form .form-pane-option.active').data('value');
-      var pane = null;
-      if( $('.conversion-form .form-pane-option.active').data('pane') ) {
-        pane = $('.conversion-form .form-pane-option.active').data('pane');
-      }
+      $('.conversion-form .form-pane-option').click(function() {
 
-      if ($('.conversion-form .form-pane-option.active').length == 1) {
+        var name = $(this).data('name');
+        var value = $(this).data('value');
+        var pane = null;
+        if( $(this).data('pane') ) {
+          pane = $(this).data('pane');
+        }
+
         icaalLeadGenerationFormValues[name] = value;
         nextPane(pane);
         $('.conversion-form .form-pane-option').removeClass('active');
         $('.pane-option-response').text('');
-      } else {
-        $('.pane-option-response').text('Please select an option from the choices above.');
-      }
 
-    });
+      });
+
+    } else {
+
+      $('.conversion-form .form-pane-submit').click(function() {
+
+        var name = $('.conversion-form .form-pane-option.active').data('name');
+        var value = $('.conversion-form .form-pane-option.active').data('value');
+        var pane = null;
+        if( $('.conversion-form .form-pane-option.active').data('pane') ) {
+          pane = $('.conversion-form .form-pane-option.active').data('pane');
+        }
+
+        if ($('.conversion-form .form-pane-option.active').length == 1) {
+          icaalLeadGenerationFormValues[name] = value;
+          nextPane(pane);
+          $('.conversion-form .form-pane-option').removeClass('active');
+          $('.pane-option-response').text('');
+        } else {
+          $('.pane-option-response').text('Please select an option from the choices above.');
+        }
+
+      });
+
+    }
 
     function nextPane(pane) {
 
@@ -218,12 +246,9 @@
         $increment = pane - $active.index();
       }
 
-      console.log($active.index());
-
       var $activeIndex = $active.index() + 1;
 
       $progressBar.css('width', $progressBarInterval * $activeIndex + '%')
-
       $active.removeClass('active');
       $next.addClass('active');
 

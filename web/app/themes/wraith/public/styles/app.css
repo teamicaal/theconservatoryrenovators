@@ -1050,6 +1050,7 @@ a:hover{
   top: 0;
   left: 0;
   height: 6px;
+  max-width: 100%;
   transition: all 0.25s ease-in-out;
 }
 
@@ -2244,6 +2245,9 @@ footer .widget .menu li{
 .text-left{
 	text-align: left;
 }
+.text-right{
+	text-align: right;
+}
 .align-middle{
 	vertical-align: middle;
 }
@@ -2770,6 +2774,9 @@ footer .widget .menu li{
 	.sm\:mb-1{
 		margin-bottom: 1rem;
 	}
+	.sm\:block{
+		display: block;
+	}
 	.sm\:grid{
 		display: grid;
 	}
@@ -2925,6 +2932,10 @@ footer .widget .menu li{
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}
+	.md\:py-1-5{
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
 	.md\:pb-1{
 		padding-bottom: 1rem;
 	}
@@ -2956,6 +2967,10 @@ footer .widget .menu li{
 	.md\:text-3xl{
 		font-size: 1.875rem;
 		line-height: 2.25rem;
+	}
+	.md\:text-base{
+		font-size: 1rem;
+		line-height: 1.5rem;
 	}
 
   .md\:right-1 {
