@@ -15,22 +15,26 @@ $details = get_sub_field('details');
         <div class="flex flex-wrap">
           <div class="w-full{!! $details ? ' md:w-2/3 md:pr-2 mb-2 md:mb-0' : null !!}">
             <form class="icaal-contact-form" data-form="contact">
-              <div class="response"></div>
               <div class="flex flex-wrap">
                 <div class="w-full md:w-1/2 mb-1 md:pr-1">
-                  <input name="first_name" type="text" placeholder="First Name*" >
+                  <input name="first_name" type="text" placeholder="First Name*">
+                  <div class="invalid-feedback text-red"></div>
                 </div>
                 <div class="w-full md:w-1/2 mb-1 md:pl-1">
-                  <input name="last_name" type="text" placeholder="Last Name*" >
+                  <input name="last_name" type="text" placeholder="Last Name*">
+                  <div class="invalid-feedback text-red"></div>
                 </div>
                 <div class="w-full mb-1">
                   <input name="email" type="email" placeholder="Email Address*">
+                  <div class="invalid-feedback text-red"></div>
                 </div>
                 <div class="w-full md:w-1/2 mb-1 md:pr-1">
                   <input name="phone" type="tel" placeholder="Phone Number*">
+                  <div class="invalid-feedback text-red"></div>
                 </div>
                 <div class="w-full md:w-1/2 mb-1 md:pl-1">
                   <input name="postcode" type="text" placeholder="Postcode*">
+                  <div class="invalid-feedback text-red"></div>
                 </div>
                 <div class="w-full mb-1">
                   <textarea name="message" placeholder="Message" rows="4"></textarea>
@@ -43,6 +47,7 @@ $details = get_sub_field('details');
                   <a href="/privacy-policy/" target="_blank">Privacy Policy</a>
                 </div>
               </div>
+              <div class="response"></div>
             </form>
           </div>
           @if( $details )
