@@ -101,7 +101,7 @@
 }
 
 .alert {
-  @apply rounded mb-1 p-1 border bg-blue-lightest text-blue border-blue-lighter;
+  @apply rounded my-1 p-1 border bg-blue-lightest text-blue border-blue-lighter;
 
   &.alert-success {
     @apply bg-green-lightest text-green border-green-lighter;
