@@ -74,6 +74,17 @@ $(() => {
     infinite: true,
   });
 
+  // Landing Page Gallery Slider
+  $('.slick-gallery-landing').slick({
+    dots: false,
+    infinite: false,
+    slidesToShow: 2,
+    autoplay: true,
+    slidesToScroll: 1,
+    draggable: true,
+    centerMode: false,
+  });
+
   $('.slick-p').click(function() {
     $(this).parent().prev().slick('slickPrev');
   });
@@ -133,15 +144,5 @@ $(() => {
     $('.nav-primary').toggleClass('open');
     $('.nav-backdrop').toggleClass('show');
   });
-});
 
-// Landing Page Gallery Slider
-$('.slick-gallery-landing').slick({
-  dots: false,
-  infinite: false,
-  slidesToShow: 2,
-  autoplay: true,
-  slidesToScroll: 1,
-  draggable: true,
-  centerMode: false,
 });

@@ -31,6 +31,7 @@ import 'slick-carousel/slick/slick.min';
 import '@fancyapps/fancybox/dist/jquery.fancybox';
 
 import './custom';
+import './forms';
 
 import { config, library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faChevronDown, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare } from '@fortawesome/pro-solid-svg-icons';
