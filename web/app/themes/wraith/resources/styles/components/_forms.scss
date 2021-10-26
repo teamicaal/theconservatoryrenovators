@@ -106,6 +106,10 @@
   &.alert-success {
     @apply bg-green-lightest text-green border-green-lighter;
   }
+
+  &.alert-danger {
+    @apply bg-red-lightest text-red border-red-lighter;
+  }
 }
 
 // Landing Page Form
