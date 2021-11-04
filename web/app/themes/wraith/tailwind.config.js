@@ -5,6 +5,7 @@ module.exports = {
       'index.php',
       './app/**/*.php',
       './resources/**/*.{php,vue,js}',
+      './resources/styles/safelist.txt',
     ],
     safelist: [
       'btn-toolbar',
