@@ -7,10 +7,10 @@
     "node": ">=12.14.0"
   },
   "scripts": {
-    "build": "mix",
+    "build": "TAILWIND_MODE=build mix",
     "build:production": "mix --production",
-    "prod": "mix --production",
-    "start": "mix watch",
+    "prod": "TAILWIND_MODE=build mix --production",
+    "start": "TAILWIND_MODE=watch mix watch",
     "hot": "mix watch --hot",
     "clear": "wp acorn optimize:clear",
     "test": "npm run lint",
@@ -40,7 +40,7 @@
     "sass-loader": "11.1.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
-    "tailwindcss": "^2.1.2",
+    "tailwindcss": "^2.2.0",
     "vue-template-compiler": "^2.6.14"
   },
   "peerDependencies": {

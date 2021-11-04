@@ -2,8 +2,15 @@ module.exports = {
   mode: 'jit',
   purge: {
     content: [
+      'index.php',
       './app/**/*.php',
       './resources/**/*.{php,vue,js}',
+    ],
+    safelist: [
+      'btn-toolbar',
+      'text-grey-light',
+      'nav-primary',
+      'nav-backdrop',
     ],
   },
   darkMode: false, // or 'media' or 'class'
