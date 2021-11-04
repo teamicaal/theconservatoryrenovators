@@ -126,7 +126,7 @@ $(() => {
           $response.append(custom_html);
       });
 
-      $('html, body').animate({scrollTop: $response.offset().top - 130}, 100);
+      // $('html, body').animate({scrollTop: $response.offset().top - 130}, 100);
 
       return false;
   });
