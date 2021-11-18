@@ -9,7 +9,7 @@
 			$title = get_sub_field('title');
 			$copy = get_sub_field('copy');
 		@endphp
-			<div class="relative w-full flex lg:py-2 py-1 {{ $i % 2 == 0 ? 'lg:flex-row-reverse' : 'lg:flex-row' }} flex-col">
+			<div class="relative w-full flex lg:py-2 py-1 {{ $i % 2 == 0 ? 'lg:flex-row-reverse flex-col' : 'lg:flex-row flex-col' }} flex-col">
 				<div class="lg:w-1/2 w-full relative">
 					<div class="w-full relative" style="min-height: 50vh;box-shadow: 0 3px 6px rgba(0,0,0,0.16);">
 						<img data-src="{{ $image['url'] }}" alt="{{ $image['alt'] }}" class="lozad absolute object-cover w-full h-full">
