@@ -35,6 +35,12 @@
     @if( get_row_layout() == 'text_cta')
       @include('partials.flexible-content.text-cta')
     @endif
+    @if( get_row_layout() == 'product_filter')
+      @include('partials.flexible-content.product-filter')
+    @endif
+    @if( get_row_layout() == 'latest_products')
+    @include('partials.flexible-content.latest-products')
+  @endif
     @if( get_row_layout() == 'html' )
       {!! get_sub_field('html_content') !!}
     @endif

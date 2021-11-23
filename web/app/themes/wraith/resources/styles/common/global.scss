@@ -353,6 +353,12 @@ a {
     padding-bottom: 100%;
   }
 
+  @screen md {
+    .md-embed-1by1 {
+      padding-bottom: 100%;
+    }
+  }
+
   .object-cover-absolute {
     @apply absolute inset-0 w-full h-full;
 
@@ -403,4 +409,103 @@ a {
 
 .text-custom-lighter-blue {
   color: #58baee;
+}
+
+//custom select
+.select-wrapper{
+  box-sizing: content-box;
+  display: inline-block;
+  border: 1px solid #909090;            
+
+  cursor: pointer;
+}
+.select-wrapper, .select-wrapper select{
+  width: 70px;
+  height: 26px;
+  line-height: 26px;
+}
+.select-wrapper:hover{
+
+  border-color: #9a9a9a;
+}
+.select-wrapper .holder{
+  display: block;
+  margin: 0 35px 0 5px;
+  white-space: nowrap;            
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  z-index: -1;
+}
+.select-wrapper select{
+  margin: 0;
+  position: absolute;
+  z-index: 2;            
+  cursor: pointer;
+  outline: none;
+  opacity: 1;
+}
+
+.box {
+  position: relative;
+  border: 1px solid  #0076ff;
+  background-color: rgb(251, 251, 251);
+  padding: 0.75rem;
+
+}
+
+.blue-check {
+  position: absolute;
+  right: 10px;
+  top: 35%;
+}
+
+.checkout-step {
+  .pane {
+    @apply hidden;
+  }
+
+  &.active {
+    .pane {
+      @apply block;
+    }
+  }
+}
+
+
+.fixed-sidebar {
+padding: 0.5rem 0;
+position: fixed;
+bottom: 50%;
+right: -5px;
+width: 80px;
+transition: right .2s ease;
+
+ path  {
+  transition: transform .2s ease;
+}
+
+  &.hide {
+    right: -74px;
+
+     path  {
+      transform: rotateY(180deg) translateX(-80%);}
+  }
+}
+
+.fixed-sidebar * {
+  color: #fff;
+}
+
+.fixed-sidebar .chevron
+ {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -15px;
+  height: 30px;
+  width: 20px;
+  font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
 }
