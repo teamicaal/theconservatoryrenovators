@@ -1,20 +1,31 @@
 module.exports = {
   mode: 'jit',
-  purge: {
-    content: [
-      'index.php',
-      './app/**/*.php',
-      './resources/**/*.{php,vue,js}',
-      './resources/styles/safelist.txt',
-    ],
-    safelist: [
-      'btn-toolbar',
-      'text-grey-light',
-      'nav-primary',
-      'nav-backdrop',
-    ],
-  },
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    'index.php',
+    './app/**/*.php',
+    './resources/**/*.{php,vue,js}',
+    './resources/styles/safelist.txt',
+  ],
+  safelist: [
+    'btn-toolbar',
+    'text-grey-light',
+    'nav-primary',
+    'nav-backdrop',
+    {
+      pattern: /^py-/,
+      pattern: /^px-/,
+      pattern: /^pt-/,
+      pattern: /^pb-/,
+      pattern: /^pl-/,
+      pattern: /^pr-/,
+      pattern: /^my-/,
+      pattern: /^mx-/,
+      pattern: /^mt-/,
+      pattern: /^mb-/,
+      pattern: /^ml-/,
+      pattern: /^mr-/,
+    },
+  ],
   theme: {
     colors: {
       'primary': '#0076FF',
@@ -162,9 +173,6 @@ module.exports = {
     },
     extend: {
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [require('@tailwindcss/typography')],
 };

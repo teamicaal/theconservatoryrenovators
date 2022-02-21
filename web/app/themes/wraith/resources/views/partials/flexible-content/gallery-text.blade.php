@@ -1,8 +1,12 @@
 @php
 $image_1 = get_sub_field('image_1');
+$alt_1 = get_sub_field('alt_1');
 $image_2 = get_sub_field('image_2');
+$alt_2 = get_sub_field('alt_2');
 $image_3 = get_sub_field('image_3');
+$alt_3 = get_sub_field('alt_3');
 $image_4 = get_sub_field('image_4');
+$alt_4 = get_sub_field('alt_4');
 $title = get_sub_field('title');
 $subtitle = get_sub_field('subtitle');
 $paragraph = get_sub_field('paragraph');
@@ -16,22 +20,22 @@ $paragraph = get_sub_field('paragraph');
         <div class="flex flex-wrap -mx-1">
           <div class="w-1/2 px-1">
             <div class="embed embed-3by4 mb-2">
-              <img data-src="{{ $image_1['sizes']['4by3-md'] }}" alt="{{ $image_1['alt'] }}" src="{{ $image_1['sizes']['lozad'] }}" class="lozad object-cover-absolute" />
+              <img data-src="{{ $image_1['sizes']['4by3-md'] }}" alt="{{ $alt_1 ? $alt_1 : $image_1['alt'] }}" src="{{ $image_1['sizes']['lozad'] }}" class="lozad object-cover-absolute" />
             </div>
             @if( $image_2 )
               <div class="embed embed-4by3">
-                <img data-src="{{ $image_2['sizes']['4by3-md'] }}" alt="{{ $image_2['alt'] }}" src="{{ $image_2['sizes']['lozad'] }}" class="lozad object-cover-absolute" />
+                <img data-src="{{ $image_2['sizes']['4by3-md'] }}" alt="{{ $alt_2 ? $alt_2 : $image_2['alt'] }}" src="{{ $image_2['sizes']['lozad'] }}" class="lozad object-cover-absolute" />
               </div>
             @endif
           </div>
           @if( $image_3 )
             <div class="w-1/2 px-1 mt-4">
               <div class="embed embed-4by3 mb-2">
-                <img data-src="{{ $image_3['sizes']['4by3-md'] }}" alt="{{ $image_3['alt'] }}" src="{{ $image_3['sizes']['lozad'] }}" class="lozad object-cover-absolute" />
+                <img data-src="{{ $image_3['sizes']['4by3-md'] }}" alt="{{ $alt_3 ? $alt_3 : $image_3['alt'] }}" src="{{ $image_3['sizes']['lozad'] }}" class="lozad object-cover-absolute" />
               </div>
               @if( $image_4 )
                 <div class="embed embed-3by4">
-                  <img data-src="{{ $image_4['sizes']['4by3-md'] }}" alt="{{ $image_4['alt'] }}" src="{{ $image_4['sizes']['lozad'] }}" class="lozad object-cover-absolute" />
+                  <img data-src="{{ $image_4['sizes']['4by3-md'] }}" alt="{{ $alt_4 ? $alt_4 : $image_4['alt'] }}" src="{{ $image_4['sizes']['lozad'] }}" class="lozad object-cover-absolute" />
                 </div>
               @endif
             </div>
