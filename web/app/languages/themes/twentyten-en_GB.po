@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Ten package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-12-09 08:20:54+0000\n"
+"PO-Revision-Date: 2022-01-26 09:03:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,6 +19,66 @@ msgstr "The 2010 theme for WordPress is stylish, customisable, simple, and reada
 #: block-patterns.php:20
 msgid "Twenty Ten"
 msgstr "Twenty Ten"
+
+#: block-patterns.php:58
+msgid "Relaxing at the lake after dinner"
+msgstr "Relaxing at the lake after dinner"
+
+#: block-patterns.php:58
+msgid "A lake at night, with Adirondack chairs in the foreground. The sun sets in the background."
+msgstr "A lake at night, with Adirondack chairs in the foreground. The sun sets in the background."
+
+#: block-patterns.php:58
+msgid "Later that night, we went back to the lake and sat by the shore. It felt different at night; quieter, as if all of nature had gone to sleep for  a little while. The only noises were the chirp of crickets and the soft splash of the waves lapping at the shore. What a beautiful way to end the day."
+msgstr "Later that night, we went back to the lake and sat by the shore. It felt different at night; quieter, as if all of nature had gone to sleep for a little while. The only noises were the chirp of crickets and the soft splash of the waves lapping at the shore. What a beautiful way to end the day."
+
+#: block-patterns.php:58
+msgid "Nearby our cabin was a lake. The sunrise looked beautiful as it rose over the hills beyond the water, reflecting down onto the gentle morning waves. I sat on the dock and drank a cup of coffee, enjoying the cool air on my skin. The coffee kept me warm inside."
+msgstr "Nearby our cabin was a lake. The sunrise looked beautiful as it rose over the hills beyond the water, reflecting down onto the gentle morning waves. I sat on the dock and drank a cup of coffee, enjoying the cool air on my skin. The coffee kept me warm inside."
+
+#: block-patterns.php:58
+msgid "The lake at 6:54 AM"
+msgstr "The lake at 06:54"
+
+#: block-patterns.php:58
+msgid "A lake with several boats docked. The sun is rising behind mountains in the background."
+msgstr "A lake with several boats docked. The sun is rising behind mountains in the background."
+
+#: block-patterns.php:55
+msgid "Alternating Images"
+msgstr "Alternating Images"
+
+#: block-patterns.php:47
+msgid "— Malebo Sephodi"
+msgstr "– Malebo Sephodi"
+
+#: block-patterns.php:47
+msgid "\"Take time off&hellip; The world will not fall apart without you.\""
+msgstr "\"Take time off&hellip; The world will not fall apart without you.\""
+
+#: block-patterns.php:44
+msgid "Highlighted Quote"
+msgstr "Highlighted Quote"
+
+#: block-patterns.php:36
+msgid "It’s amazing what a good weekend can do. After a tough couple weeks at work, I knew I needed to get away and be in nature. My partner and I decided to take a long weekend and stay in a cabin in the woods. We packed up after work on Friday and drove out into the country, passing through fields full of horses, old farms, and quaint little town squares. It was an idyllic drive. Eventually, we reached our destination and unpacked the car. We couldn’t wait to cook up a simple dinner and then relax by the fireplace."
+msgstr "It’s amazing what a good weekend can do. After a tough couple of weeks at work, I knew I needed to get away and be in nature. My partner and I decided to take a long weekend and stay in a cabin in the woods. We packed up after work on Friday and drove out into the country, passing through fields full of horses, old farms, and quaint little town squares. It was an idyllic drive. Eventually, we reached our destination and unpacked the car. We couldn’t wait to cook up a simple dinner and then relax by the fireplace."
+
+#: block-patterns.php:36
+msgid "A Weekend Away"
+msgstr "A Weekend Away"
+
+#: block-patterns.php:36
+msgid "An old barn we passed on the drive"
+msgstr "An old barn we passed on the drive"
+
+#: block-patterns.php:36
+msgid "A red barn with a white roof in a field."
+msgstr "A red barn with a white roof in a field."
+
+#: block-patterns.php:33
+msgid "Introduction"
+msgstr "Introduction"
 
 #. translators: %s: Post title.
 #: loop-attachment.php:27
@@ -226,7 +286,6 @@ msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$
 msgstr "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 
 #. translators: %s: Author display name.
-#. translators: %s: Author display name.
 #: functions.php:618 loop-attachment.php:50
 msgid "View all posts by %s"
 msgstr "View all posts by %s"
@@ -379,7 +438,6 @@ msgstr "This post is password protected. Enter the password to view any comments
 msgid "Category Archives: %s"
 msgstr "Category Archives: %s"
 
-#. translators: %s: Author display name.
 #. translators: %s: Author display name.
 #: author.php:58 loop-single.php:61
 msgid "About %s"
