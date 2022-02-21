@@ -12,13 +12,13 @@ $custom_class = get_sub_field('custom_class');
       @while( have_rows('accreditations') )
         @php
         the_row();
-        $logo = get_sub_field('logo');
+        $image = get_sub_field('image');
         $link = get_sub_field('link');
         $alt = get_sub_field('image_alt');
         @endphp
         <div class="w-10 lg:w-1/6 mb-1 px-1 snap-center" style="flex: 0 0 auto;">
           <{!! $link ? 'a href="' . $link . '" target="_blank"' : 'div'; !!} class="block bg-white rounded-sm border border-grey-light p-1 lg:p-1-5 text-center">
-            <img data-src="{{ $logo['url'] }}" src="{{ $logo['sizes']['thumbnail'] }}" width="96" height="96" alt="{{ $alt ? $alt : $logo['alt'] }}" class="lozad noblur w-full h-auto mx-auto" style="max-width: 6rem;" />
+            <img data-src="{{ $image['url'] }}" src="{{ $image['sizes']['thumbnail'] }}" width="96" height="96" alt="{{ $alt ? $alt : $image['alt'] }}" class="lozad noblur w-full h-auto mx-auto" style="max-width: 6rem;" />
           </{!! $link ? 'a' : 'div'; !!}>
         </div>
       @endwhile
