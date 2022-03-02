@@ -146,3 +146,44 @@ $(() => {
   });
 
 });
+
+
+
+
+// Landing Page Gallery Slider
+$('.slick-gallery-landing').slick({
+  dots: false,
+  infinite: false,
+  slidesToShow: 2,
+  autoplay: true,
+  slidesToScroll: 1,
+  draggable: true,
+  centerMode: false,
+});
+
+  $('.toggle').click(function(e) {
+    var $this = $(this);
+    var $parent = $this.parents('.checkout-step.active');
+    $parent.removeClass('active');
+    $parent.next().addClass('active');
+  });
+
+  var $document = $(document);
+  $document.scroll(function() {
+    if ($document.scrollTop() >= 800) {
+      // user scrolled 50 pixels or more;
+      // do stuff
+      $('#fixed-sidebar').addClass(' block')
+      $('#fixed-sidebar').removeClass("hidden");
+
+    } else {
+      $('#fixed-sidebar').removeClass("block");
+      $('#fixed-sidebar').addClass(' hidden')
+
+    }
+  });
+
+
+  $(".toggler").click(function () {
+    $(this).parents('#fixed-sidebar').toggleClass('hide');
+  });
