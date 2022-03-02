@@ -44,3 +44,12 @@ $args    = array(
 	'capability_type'     => 'post',
 );
 register_post_type( 'download', $args );
+
+// Redirect all single download items to download archive
+add_action( 'template_redirect', 'redirect_single_download' );
+function redirect_single_download() {
+  if ( is_singular('download') ) {
+    wp_redirect( get_post_type_archive_link('download'), 301 );
+    exit;
+  }
+}

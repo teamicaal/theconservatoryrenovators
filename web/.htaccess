@@ -14,10 +14,6 @@ RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
 
-# Redirect all single download items to archive
-RewriteEngine On
-RewriteRule ^(downloads/). /$1 [R,L]
-
 ## STOP REFERRER SPAM
 RewriteCond %{HTTP_REFERER} semalt\.com [NC,OR]
 RewriteCond %{HTTP_REFERER} www1.free-share-buttons\.top [NC,OR]
