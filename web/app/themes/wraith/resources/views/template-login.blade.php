@@ -14,8 +14,8 @@
 
 @section('content')
   <div class="h-screen flex flex-wrap relative">
-    <div class="w-full lg:w-1/2 xl:w-2/5 p-2 relative">
-      <div class="w-full h-full flex flex-col justify-between rounded-xl bg-white">
+    <div class="w-full lg:w-1/2 xl:w-2/5 p-2 relative flex items-center">
+      <div class="w-full lg:h-full flex flex-col justify-between rounded-xl bg-white">
         <div class="mb-2 lg:mb-0 p-2">
           <a href="{{ get_bloginfo('url') }}" class="border-none">
             @if( $icon )
