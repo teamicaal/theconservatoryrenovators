@@ -8,7 +8,7 @@
     @if( $background )
       <img src="{{ $background['sizes']['lozad'] }}" data-src="{{ $background['url'] }}" alt="Login" class="lozad absolute w-full h-full inset-0 object-cover duration-1000" />
     @endif
-    <main id="primary" class="main content-area main-wrapper">
+    <main id="primary" class="main content-area main-wrappe overflow-y-scroll">
       @yield('content')
     </main>
     @php
