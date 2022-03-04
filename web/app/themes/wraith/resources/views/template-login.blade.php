@@ -27,7 +27,7 @@
             @endif
           </a>
         </div>
-        <div class="w-full md:px-2 lg:px-4 xl:px-8">
+        <div class="w-full px-2 lg:px-4 xl:px-8">
           @if( $login === 'failed' )
             {!! '<div class="alert alert-danger">The login details you entered are incorrect. Please try again.</div>' !!}
           @elseif( $login === 'empty' )
@@ -181,7 +181,7 @@
               </g>
               </svg>
             </a>
-            <p class="mb-0 text-grey-darker ml-1">
+            <p class="mb-0 text-grey-darker ml-1 hidden md:block">
               Creative Digital Marketing
             </p>
           </div>
@@ -195,6 +195,6 @@
         </div>
       </div>
     </div>
-    <div class="w-full lg:w-1/2 xl:w-3/5"></div>
+    <div class="w-full lg:w-1/2 xl:w-3/5 hidden lg:block"></div>
   </div>
 @endsection
