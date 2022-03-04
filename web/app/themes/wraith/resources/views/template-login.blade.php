@@ -13,7 +13,7 @@
 @extends('layouts.login')
 
 @section('content')
-  <div class="h-screen flex flex-wrap relative">
+  <div class="h-screen flex flex-wrap">
     <div class="w-full lg:w-1/2 xl:w-2/5 p-2 relative flex items-center">
       <div class="w-full lg:h-full flex flex-col justify-between rounded-xl bg-white">
         <div class="mb-2 lg:mb-0 p-2">
@@ -27,17 +27,17 @@
             @endif
           </a>
         </div>
-        <div class="w-full px-2 lg:px-4 xl:px-8">
+        <div class="w-full px-2 lg:px-4 xl:px-8 mb-1 lg:mb-0">
           @if( $login === 'failed' )
-            {!! '<div class="alert alert-danger">The login details you entered are incorrect. Please try again.</div>' !!}
+            {!! '<div class="alert alert-danger text-sm">The login details you entered are incorrect. Please try again.</div>' !!}
           @elseif( $login === 'empty' )
-            {!! '<div class="alert alert-danger">Please enter both your username and password to login.</div>' !!}
+            {!! '<div class="alert alert-danger text-sm">Please enter both your username and password to login.</div>' !!}
           @elseif( $login === 'false' )
-            {!! '<div class="alert alert-info">You are now logged out.</div>' !!}
+            {!! '<div class="alert alert-info text-sm">You are now logged out.</div>' !!}
           @elseif( $login === 'media' )
-            {!! '<div class="alert alert-info">Cant login? <a href="/contact/" target="_blank">Request access to the media centre.</a></div>' !!}
+            {!! '<div class="alert alert-info text-sm">Cant login? <a href="/contact/" target="_blank">Request access to the media centre.</a></div>' !!}
           @elseif( is_user_logged_in() )
-            {!! '<div class="alert alert-info">You are already logged in. <a href="' . wp_logout_url() . '">Log out?</a></div>' !!}
+            {!! '<div class="alert alert-info text-sm">You are already logged in. <a href="' . wp_logout_url() . '">Log out?</a></div>' !!}
           @endif
           <div class="bg-white z-depth-1 p-a-1">
             @include('partials.form-login')
