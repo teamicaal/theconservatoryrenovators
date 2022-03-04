@@ -48,7 +48,7 @@
             <a href="https://www.internetconsultancy.pro/" target="_blank" class="border-none">
               <?xml version="1.0" encoding="utf-8"?>
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve" width="52" height="52" class="transition hover:opacity-75" style="color: #1F80C4; fill: currentColor;">
+                 viewBox="0 0 100 100" style="color: #1F80C4; fill: currentColor;; enable-background: new 0 0 100 100;" xml:space="preserve" width="52" height="52" class="transition hover:opacity-75">
               <g>
                 <path d="M75.2,86c-0.4,0.7-1.1,1.1-2.2,1.4C72,87.8,72,88.6,72,88.9c0,0.7-0.4,0.7-0.7,1.1c-0.7,0.4-0.4,0.7-0.4,1.1
                   c0,0.7,0,0.4,0.7,0.4s1.1-0.7,1.4-1.1c0.4-0.7,1.1-1.1,1.4-2.2s1.4-1.8,1.4-2.5C75.9,84.9,75.2,85.3,75.2,86z"/>
