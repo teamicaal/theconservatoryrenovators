@@ -29,15 +29,15 @@
         </div>
         <div class="w-full px-2 lg:px-4 xl:px-8 mb-1 lg:mb-0">
           @if( $login === 'failed' )
-            {!! '<div class="alert alert-danger text-sm">The login details you entered are incorrect. Please try again.</div>' !!}
+            {!! '<div class="alert alert-danger text-xs">The login details you entered are incorrect. Please try again.</div>' !!}
           @elseif( $login === 'empty' )
-            {!! '<div class="alert alert-danger text-sm">Please enter both your username and password to login.</div>' !!}
+            {!! '<div class="alert alert-danger text-xs">Please enter both your username and password to login.</div>' !!}
           @elseif( $login === 'false' )
-            {!! '<div class="alert alert-info text-sm">You are now logged out.</div>' !!}
+            {!! '<div class="alert alert-info text-xs">You are now logged out.</div>' !!}
           @elseif( $login === 'media' )
-            {!! '<div class="alert alert-info text-sm">Cant login? <a href="/contact/" target="_blank">Request access to the media centre.</a></div>' !!}
+            {!! '<div class="alert alert-info text-xs">Cant login? <a href="/contact/" target="_blank">Request access to the media centre.</a></div>' !!}
           @elseif( is_user_logged_in() )
-            {!! '<div class="alert alert-info text-sm">You are already logged in. <a href="' . wp_logout_url() . '">Log out?</a></div>' !!}
+            {!! '<div class="alert alert-info text-xs">You are already logged in. <a href="' . wp_logout_url() . '">Log out?</a></div>' !!}
           @endif
           <div class="bg-white z-depth-1 p-a-1">
             @include('partials.form-login')
