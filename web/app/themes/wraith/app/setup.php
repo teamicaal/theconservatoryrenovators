@@ -234,6 +234,7 @@ require_once('custom-post-types.php');
 require_once('custom-taxonomies.php');
 require_once('image-sizes.php');
 require_once('Forms/forms.php');
+require_once('login.php');
 
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(
