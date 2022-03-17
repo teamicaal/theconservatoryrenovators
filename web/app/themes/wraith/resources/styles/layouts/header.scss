@@ -1,0 +1,230 @@
+#header {
+  @apply z-20;
+
+  .brand {
+    @media (max-width: 991px) {
+      @apply h-8;
+
+      > img {
+        @apply h-8 w-auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .nav-primary {
+    @apply invisible absolute right-0 w-full transition z-10;
+
+    top: 57px;
+    height: calc(100vh - 57px);
+    transform: translateX(100%);
+
+    > ul {
+      @apply w-5/6 ml-auto h-full bg-white border-t border-gray-200;
+    }
+
+    ul {
+      @apply list-none pl-0;
+
+      li {
+        a {
+          @apply block text-gray-800 font-normal border-b border-gray-200 px-8 py-4;
+
+          &:hover {
+            @apply text-primary;
+          }
+        }
+
+        &.menu-item-has-children {
+          @apply relative;
+
+          > a {
+            &:hover {
+              @apply text-gray-800;
+            }
+          }
+
+          .toggle {
+            > svg {
+              @apply text-gray-800 transition;
+
+              transform: rotate(0);
+
+              path {
+                fill: currentColor;
+              }
+            }
+          }
+
+          .sub-menu {
+            @apply bg-gray-100 overflow-hidden hidden;
+
+            > li {
+              > a {
+                @apply pl-10;
+              }
+
+              > .sub-menu {
+                > li {
+                  > a {
+                    @apply pl-12;
+                  }
+                }
+              }
+            }
+          }
+
+          &.open {
+            > a {
+              @apply text-black border-primary;
+            }
+
+            > .toggle {
+              > svg {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.open {
+      @apply visible;
+
+      transform: translateX(0);
+    }
+  }
+
+  .nav-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 57px;
+    height: calc(100vh - 57px);
+
+    &.show {
+      @apply visible opacity-100;
+    }
+  }
+}
+
+@screen lg {
+  .nav-primary {
+    > ul {
+      > li {
+        > a {
+          @apply text-xs text-gray-800 font-normal uppercase tracking-wide inline-block px-4 py-8;
+
+          &:hover {
+            @apply text-primary;
+          }
+        }
+
+        > .sub-menu {
+          @apply bg-gray-100;
+
+          top: 54px;
+
+          > li {
+            > .sub-menu {
+              @apply bg-white;
+            }
+          }
+        }
+
+        &:hover {
+          > .sub-menu {
+            top: 70px;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-toolbar {
+    > ul {
+      > li {
+        &:not(.btn-toolbar) {
+          a {
+            @apply px-4 py-8  font-normal;
+          }
+        }
+
+        > .sub-menu {
+          @apply bg-white z-50;
+
+          top: 12px;
+        }
+
+        &:hover {
+          > .sub-menu {
+            top: 28px;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-has-dropdowns {
+    > ul {
+      @apply list-none pl-0 flex flex-wrap items-center;
+
+      > li {
+        @apply relative;
+
+        > .sub-menu {
+          @apply absolute left-0 w-48 pl-0 list-none rounded-sm shadow border-b border-primary transition;
+
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        &:hover {
+          > .sub-menu {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+
+        > .sub-menu > li {
+          @apply relative;
+
+          a {
+            @apply block text-xs text-gray-800 font-normal px-4 py-3;
+
+            &:hover {
+              @apply text-primary;
+            }
+          }
+
+          > .sub-menu {
+            @apply absolute top-0 w-48 pl-0 list-none rounded-sm shadow border-b border-primary;
+
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            transform: translateX(0);
+          }
+
+          &:hover {
+            > .sub-menu {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn-toolbar {
+  a {
+    @apply inline-block text-xs bg-primary font-sans font-normal uppercase tracking-wide rounded-sm leading-none;
+    @apply text-white p-3 #{!important};
+
+    &:hover {
+      @apply bg-blue-600;
+    }
+  }
+}

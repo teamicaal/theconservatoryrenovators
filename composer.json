@@ -33,7 +33,7 @@
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "5.11.4",
+        "version": "5.12",
         "type": "wordpress-plugin",
         "dist": {
           "type": "zip",
@@ -52,12 +52,13 @@
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "5.9.0",
+    "roots/wordpress": "5.9.2",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "advanced-custom-fields/advanced-custom-fields-pro": "^5.9.9",
-    "yoast/wordpress-seo": "^18.1",
-    "roots/soil": "4.0.5"
+    "yoast/wordpress-seo": "^18.3",
+    "roots/soil": "4.0.5",
+    "roots/acorn": "^2.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.6.0",

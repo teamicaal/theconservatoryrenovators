@@ -14,9 +14,9 @@
 
 @section('content')
   <div class="h-screen flex flex-wrap">
-    <div class="w-full lg:w-1/2 xl:w-2/5 p-2 relative flex items-center">
+    <div class="w-full lg:w-1/2 xl:w-2/5 p-8 relative flex items-center">
       <div class="w-full lg:h-full flex flex-col justify-between rounded-xl bg-white">
-        <div class="mb-2 lg:mb-0 p-2">
+        <div class="mb-8 lg:mb-0 p-8">
           <a href="{{ get_bloginfo('url') }}" class="border-none">
             @if( $icon )
               <img src="{!! $icon['url'] !!}" alt="{!! get_bloginfo('name', 'display') !!} Logo"{!! $icon_retina ? ' srcset="' . $icon['url'] . ' 1x, ' . $icon_retina['url'] . ' 2x"' : null !!} width="48" height="48" class="opacity-100 transition hover:opacity-75">
@@ -27,7 +27,7 @@
             @endif
           </a>
         </div>
-        <div class="w-full px-2 lg:px-4 xl:px-8 mb-1 lg:mb-0">
+        <div class="w-full px-8 lg:px-16 xl:px-32 mb-4 lg:mb-0">
           @if( $login === 'failed' )
             {!! '<div class="alert alert-danger text-xs">The login details you entered are incorrect. Please try again.</div>' !!}
           @elseif( $login === 'empty' )
@@ -39,11 +39,11 @@
           @elseif( is_user_logged_in() )
             {!! '<div class="alert alert-info text-xs">You are already logged in. <a href="' . wp_logout_url() . '">Log out?</a></div>' !!}
           @endif
-          <div class="bg-white z-depth-1 p-a-1">
+          <div class="bg-white z-depth-1">
             @include('partials.form-login')
           </div>
         </div>
-        <div class="w-full p-2 flex flex-wrap justify-between items-center">
+        <div class="w-full p-8 flex flex-wrap justify-between items-center">
           <div class="flex flex-wrap items-center">
             <a href="https://www.internetconsultancy.pro/" target="_blank" class="border-none">
               <?xml version="1.0" encoding="utf-8"?>
@@ -181,16 +181,16 @@
               </g>
               </svg>
             </a>
-            <p class="mb-0 text-grey-darker ml-1 hidden md:block">
+            <p class="mb-0 text-gray-800 ml-4 hidden md:block">
               Creative Digital Marketing
             </p>
           </div>
           <div class="flex flex-wrap items-center">
-            <a class="p-0-5 mx-0-25" href="https://www.facebook.com/ICAALUK" target="_blank" class="text-primary hover:text-primary-dark"><i class="fab fa-facebook-f"></i></a>
-            <a class="p-0-5 mx-0-25" href="https://www.facebook.com/ICAALUK" target="_blank" class="text-primary hover:text-primary-dark"><i class="fab fa-twitter"></i></a>
-            <a class="p-0-5 mx-0-25" href="https://www.facebook.com/ICAALUK" target="_blank" class="text-primary hover:text-primary-dark"><i class="fab fa-instagram"></i></a>
-            <a class="p-0-5 mx-0-25" href="https://www.facebook.com/ICAALUK" target="_blank" class="text-primary hover:text-primary-dark"><i class="fab fa-youtube"></i></a>
-            <a class="p-0-5 mx-0-25" href="https://www.facebook.com/ICAALUK" target="_blank" class="text-primary hover:text-primary-dark"><i class="fab fa-linkedin-in"></i></a>
+            <a class="p-4 mx-1" href="https://www.facebook.com/ICAALUK" target="_blank" class="text-primary hover:text-primary-dark"><i class="fab fa-facebook-f"></i></a>
+            <a class="p-4 mx-1" href="https://www.facebook.com/ICAALUK" target="_blank" class="text-primary hover:text-primary-dark"><i class="fab fa-twitter"></i></a>
+            <a class="p-4 mx-1" href="https://www.facebook.com/ICAALUK" target="_blank" class="text-primary hover:text-primary-dark"><i class="fab fa-instagram"></i></a>
+            <a class="p-4 mx-1" href="https://www.facebook.com/ICAALUK" target="_blank" class="text-primary hover:text-primary-dark"><i class="fab fa-youtube"></i></a>
+            <a class="p-4 mx-1" href="https://www.facebook.com/ICAALUK" target="_blank" class="text-primary hover:text-primary-dark"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>

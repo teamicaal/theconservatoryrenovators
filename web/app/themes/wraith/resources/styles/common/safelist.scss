@@ -1,9 +1,0 @@
-/* purgecss start ignore */
-.lozad:not(.noblur) {
-  filter: blur(8px);
-
-  &[data-loaded="true"] {
-    filter: none;
-  }
-}
-/* purgecss end ignore */

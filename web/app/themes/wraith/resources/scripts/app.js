@@ -1,6 +1,25 @@
+import {domReady} from '@roots/sage/client';
+
 /**
- * External Dependencies
+ * app.main
  */
+const main = async (err) => {
+  if (err) {
+    // handle hmr errors
+    console.error(err);
+  }
+
+  // application code
+};
+
+/**
+ * Initialize
+ *
+ * @see https://webpack.js.org/api/hot-module-replacement
+ */
+domReady(main);
+import.meta.webpackHot?.accept(main);
+
 import 'jquery';
 jQuery.event.special.touchstart = {
   setup: function( _, ns, handle ) {
@@ -34,30 +53,8 @@ import './custom';
 import './forms';
 
 import { config, library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faChevronDown, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare, faChevronLeft, faChevronRight, faPoundSign, faUser, faKey  } from '@fortawesome/pro-solid-svg-icons';
+import { faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare, faChevronUp, faChevronRight, faChevronDown, faChevronLeft, faPoundSign, faUser, faKey, faCheck  } from '@fortawesome/pro-solid-svg-icons';
 import { faFacebook, faFacebookF, faTwitter, faInstagram, faYoutube, faPinterest, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 config.searchPseudoElements=true;
-library.add(faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faFacebook, faFacebookF, faTwitter, faInstagram, faYoutube, faPinterest, faLinkedin, faLinkedinIn, faChevronDown, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare, faChevronLeft, faChevronRight, faPoundSign, faUser, faKey );
+library.add(faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faFacebook, faFacebookF, faTwitter, faInstagram, faYoutube, faPinterest, faLinkedin, faLinkedinIn, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare, faChevronUp, faChevronRight, faChevronDown, faChevronLeft, faPoundSign, faUser, faKey, faCheck );
 dom.i2svg();
-
-// import Vue from 'vue';
-// import { vueRouter, createRouter, createWebHistory } from 'vue-router'
-// createRouter({
-//   history: createWebHistory('/shop'),
-//   routes: [
-//     {
-//       path: '/shop',
-//       name: 'index',
-//       component: Shop,
-//       meta: {
-//         title: 'Shop'
-//       }
-//     }
-//   ]
-// })
-//
-// import Shop from './views/Shop';
-// import { createApp } from 'vue'
-// createApp({
-//   components: { Shop },
-// }).mount('#shop');
