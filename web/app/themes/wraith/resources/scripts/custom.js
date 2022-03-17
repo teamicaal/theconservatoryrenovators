@@ -1,7 +1,7 @@
 import mixitup from 'mixitup';
 
-$(() => {
-  $('#menu-header-menu li.menu-item-has-children').append('<div class="toggle lg:hidden absolute z-20 top-0 right-0 px-2 py-1"><svg class="svg-inline--fa fa-chevron-down fa-w-14" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div>');
+(function($) {
+  $('#menu-header-menu li.menu-item-has-children').append('<div class="toggle lg:hidden absolute z-20 top-0 right-0 px-8 py-4"><svg class="svg-inline--fa fa-chevron-down fa-w-14" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div>');
 
   var timing = 200;
 
@@ -74,13 +74,15 @@ $(() => {
     infinite: true,
   });
 
-  // Landing Page Gallery Slider
-  $('.slick-gallery-landing').slick({
+  // Gallery Slider
+  $('.slick-gallery-slider').slick({
     dots: false,
+    arrows: false,
     infinite: false,
     slidesToShow: 2,
     autoplay: true,
     slidesToScroll: 1,
+    swipeToSlide: true,
     draggable: true,
     centerMode: false,
   });
@@ -145,22 +147,6 @@ $(() => {
     $('.nav-backdrop').toggleClass('show');
   });
 
-});
-
-
-
-
-// Landing Page Gallery Slider
-$('.slick-gallery-landing').slick({
-  dots: false,
-  infinite: false,
-  slidesToShow: 2,
-  autoplay: true,
-  slidesToScroll: 1,
-  draggable: true,
-  centerMode: false,
-});
-
   $('.toggle').click(function(e) {
     var $this = $(this);
     var $parent = $this.parents('.checkout-step.active');
@@ -184,6 +170,36 @@ $('.slick-gallery-landing').slick({
   });
 
 
-  $(".toggler").click(function () {
+  $('.toggler').click(function () {
     $(this).parents('#fixed-sidebar').toggleClass('hide');
   });
+
+  $(document).ready(function() {
+    var checkoutSummaryHeight = $('#checkout-summary-fixed').outerHeight();
+    $('#checkout-summary-fixed').css('bottom', '-' + checkoutSummaryHeight + 'px');
+  });
+  $('#checkout-summary-toggle').on('click', function() {
+    $(this).toggleClass('active');
+    var checkoutSummaryHeight = $('#checkout-summary-fixed').outerHeight();
+    var combinedHeight = checkoutSummaryHeight + 53;
+    if( $('#checkout-summary-fixed').hasClass('active') ) {
+      $('#checkout-summary-fixed').css('bottom', '-' + checkoutSummaryHeight + 'px');
+      $('#checkout-summary-fixed').removeClass('active')
+    } else {
+      $('#checkout-summary-fixed').css('bottom', '50px');
+      $('#checkout-summary-fixed').addClass('active')
+    }
+  });
+
+  $('input[name="card_number"]').on('keyup', function () {
+    if (this.value.length == this.maxLength) {
+      $('input[name="expiry_date"]').focus();
+    }
+  });
+
+  $('input[name="expiry_date"]').on('keyup', function () {
+    if (this.value.length == this.maxLength) {
+      $('input[name="cvc"]').focus();
+    }
+  });
+})(jQuery);

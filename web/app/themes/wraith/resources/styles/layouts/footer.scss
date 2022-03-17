@@ -1,0 +1,28 @@
+footer {
+  .widget {
+    p,
+    ul,
+    li,
+    a {
+      @apply text-white;
+    }
+
+    h3 {
+      @apply text-xl font-serif text-white uppercase tracking-widest border-b border-white pb-8 mb-8;
+    }
+
+    .menu {
+      @apply list-none pl-0;
+
+      li {
+        @apply mb-4;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #wpadminbar {
+    display: none !important;
+  }
+}

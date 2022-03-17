@@ -39,8 +39,20 @@
       @include('partials.flexible-content.product-filter')
     @endif
     @if( get_row_layout() == 'latest_products')
-    @include('partials.flexible-content.latest-products')
-  @endif
+      @include('partials.flexible-content.latest-products')
+    @endif
+    @if( get_row_layout() == 'cta')
+      @include('partials.flexible-content.cta-block')
+    @endif
+    @if( get_row_layout() == 'key_features')
+      @include('partials.flexible-content.key-features')
+    @endif
+    @if( get_row_layout() == 'gallery_slider')
+      @include('partials.flexible-content.gallery-slider')
+    @endif
+    @if( get_row_layout() == 'form_conversion')
+      @include('partials.flexible-content.form-conversion')
+    @endif
     @if( get_row_layout() == 'html' )
       {!! get_sub_field('html_content') !!}
     @endif

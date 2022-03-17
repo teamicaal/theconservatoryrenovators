@@ -1,0 +1,1 @@
+<?php (dynamic_sidebar('sidebar-primary')); ?><?php /**PATH /Users/mattpickles/Local Sites/wraith/web/app/themes/wraith/resources/views/partials/sidebar.blade.php ENDPATH**/ ?>

@@ -39,12 +39,11 @@
     }
   },
   "require": {
-    "php": "^7.3|^8.0",
+    "php": "^7.4|^8.0",
     "log1x/sage-directives": "^1.1",
-    "roots/acorn": "2.0.0-alpha.0"
+    "log1x/sage-svg": "^1.1"
   },
   "require-dev": {
-    "filp/whoops": "^2.12",
     "squizlabs/php_codesniffer": "^3.6"
   },
   "suggest": {
@@ -54,17 +53,20 @@
   "config": {
     "optimize-autoloader": true,
     "preferred-install": "dist",
-    "sort-packages": true,
-    "platform-check": false
+    "sort-packages": true
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
     "lint": [
-      "phpcs --extensions=php --standard=PSR12 app config"
-    ],
-    "post-autoload-dump": [
-      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+      "phpcs --extensions=php --standard=PSR12 app"
     ]
+  },
+  "extra": {
+    "acorn": {
+      "providers": [
+        "App\\Providers\\ThemeServiceProvider"
+      ]
+    }
   }
 }
