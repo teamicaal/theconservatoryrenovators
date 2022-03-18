@@ -10,20 +10,20 @@ Wraith is built using the Roots stack of [Bedrock](https://roots.io/bedrock/) an
 - Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
 - Autoloader for mu-plugins (use regular plugins as mu-plugins)
 - Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
-- Automatic compiling and syntax validation with [Webpack](https://webpack.github.io/) and [ESLint](https://eslint.org/)
-- Automatic updates in local evironment with [BrowserSync](https://browsersync.io/)
+- Automatic compiling and syntax validation with [Bud](https://bud.js.org/)
+- Automatic updates in local evironment with proxy URL
 - Easy package management with [Yarn](https://yarnpkg.com/)
 - Templating with [Laravel Blade](https://laravel.com/docs/8.x/blade)
-- Utility based [Tailwind CSS](https://tailwindcss.com/) - v2.1.2
-- Easy control over js routes
-- Smaller dist css files with [PurgeCSS](https://purgecss.com/)
+- Utility based [Tailwind CSS](https://tailwindcss.com/) - v3.x
+- Smaller dist css files with Tailwind JIT engine
 - Cleaner WordPress outputted markup & more nice features with [Soil plugin](https://roots.io/plugins/soil/)
+- Laravel components with [Acorn](https://roots.io/acorn/)
 
 ## Requirements
 
-- PHP >= 7.3
+- PHP >= 8.0
 - Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
-- [Node.js](https://nodejs.org/en/) >=8.0.0
+- [Node.js](https://nodejs.org/en/) >=16
 - [Yarn](https://yarnpkg.com/)
 
 ## Quick Install
@@ -62,7 +62,7 @@ composer install
 yarn
 ```
 
-Once this is done, you just need to set up a local database and run `yarn start` in the theme directory.
+Once this is done, you just need to set up a local database and run `yarn dev` in the theme directory.
 
 ## Manual Installation
 
@@ -120,7 +120,7 @@ ssh -N -L 5555:127.0.0.1:3306 dev@s1.icaal.co.uk -vv
 12. Build theme theme package with Yarn and start developing. BrowserSync will launch a proxy server at localhost:3000 and will Webpack will start watching for file changes.
   ```
   yarn
-  yarn start
+  yarn dev
   ```
 13. Access WordPress admin at `https://example.com/wp/wp-admin/`
 
@@ -131,8 +131,7 @@ ssh -N -L 5555:127.0.0.1:3306 dev@s1.icaal.co.uk -vv
 16. Run a search & replace on the database to update all instances of the old URL, and refresh your permalinks
 
 17. You can run the following commands in the theme directory to prep the files for distribution
-- `yarn build` - Build theme for quick distribution (recommended for pushing to staging server)
-- `yarn build:production` - Build theme and run optimise scripts defined in `/resources/assets/build/webpack.config.optimize.js`. By default this includes image optimisation for `/resources/assets`, UglifyJS, minifying CSS and PurgeCSS. This must be done for production servers.
+- `yarn build` - Build theme for distribution (for staging or production)
 
 ## Template Designs
 [XD Prototype](https://xd.adobe.com/view/ea1dcfa0-7040-40f3-97fd-9483e7c47c3b-bf4e/)
