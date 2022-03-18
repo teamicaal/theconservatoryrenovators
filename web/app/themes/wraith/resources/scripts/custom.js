@@ -5,7 +5,7 @@ import mixitup from 'mixitup';
 
   var timing = 200;
 
-  $('#menu-header-menu > li.menu-item-has-children > .toggle').click(function() {
+  $('#menu-header-menu > li.menu-item-has-children > .toggle').on('click', function() {
     if ($(this).parent().hasClass('open')) {
       $(this).parent().parent().find('li.menu-item-has-children').removeClass('open');
       $(this).parent().parent().find('.sub-menu').slideUp(timing);
@@ -17,7 +17,7 @@ import mixitup from 'mixitup';
     }
   });
 
-  $('#menu-header-menu > li.menu-item-has-children > .sub-menu > li.menu-item-has-children > .toggle').click(function() {
+  $('#menu-header-menu > li.menu-item-has-children > .sub-menu > li.menu-item-has-children > .toggle').on('click', function() {
     if ($(this).parent().hasClass('open')) {
       $(this).parent().parent().find('li.menu-item-has-children').removeClass('open');
       $(this).parent().parent().find('.sub-menu').slideUp(timing);
@@ -87,10 +87,10 @@ import mixitup from 'mixitup';
     centerMode: false,
   });
 
-  $('.slick-p').click(function() {
+  $('.slick-p').on('click', function() {
     $(this).parent().prev().slick('slickPrev');
   });
-  $('.slick-n').click(function() {
+  $('.slick-n').on('click', function() {
     $(this).parent().prev().slick('slickNext');
   });
 
@@ -120,7 +120,7 @@ import mixitup from 'mixitup';
   $('#cookie-notice').CookieNotice();
 
   // Share Button
-  $('.page-share').click(function() {
+  $('.page-share').on('click', function() {
     if( navigator.share ) {
       navigator.share({
         title: 'Share This Page',
@@ -137,17 +137,17 @@ import mixitup from 'mixitup';
     }
   });
 
-  $('.panel-share-close').click(function() {
+  $('.panel-share-close').on('click', function() {
     $('#panel-share').removeClass('active');
   });
 
   // Mobile Nav
-  $('#nav-primary-toggle').click(function() {
+  $('#nav-primary-toggle').on('click', function() {
     $('.nav-primary').toggleClass('open');
     $('.nav-backdrop').toggleClass('show');
   });
 
-  $('.toggle').click(function(e) {
+  $('.toggle').on('click', function(e) {
     var $this = $(this);
     var $parent = $this.parents('.checkout-step.active');
     $parent.removeClass('active');
@@ -155,7 +155,7 @@ import mixitup from 'mixitup';
   });
 
   var $document = $(document);
-  $document.scroll(function() {
+  $document.on('scroll', function() {
     if ($document.scrollTop() >= 800) {
       // user scrolled 50 pixels or more;
       // do stuff
@@ -170,7 +170,7 @@ import mixitup from 'mixitup';
   });
 
 
-  $('.toggler').click(function () {
+  $('.toggler').on('click', function () {
     $(this).parents('#fixed-sidebar').toggleClass('hide');
   });
 
