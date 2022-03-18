@@ -1,5 +1,5 @@
 (function($) {
-  $('.icaal-contact-form').submit(function (e) {
+  $('.icaal-contact-form').on('submit', function (e) {
       var $form = $(this);
       var form_submission = $form.attr('data-form');
 

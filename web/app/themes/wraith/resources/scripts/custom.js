@@ -30,7 +30,7 @@ import mixitup from 'mixitup';
   });
 
   // Desktop nav
-  $('#menu-header-menu > li > .sub-menu > li.menu-item-has-children').hover(function() {
+  $('#menu-header-menu > li > .sub-menu > li.menu-item-has-children').on('hover', function() {
     if( $(window).innerWidth() > 991 ) {
       var target = $(this).find('> ul.sub-menu');
       var width = $(target).outerWidth();
