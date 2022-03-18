@@ -6,9 +6,9 @@ $script_schema_global = get_field('script_schema_global', 'option');
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preload" href="@asset('fonts/roboto/Roboto-Regular.woff2')" as="font" crossorigin="anonymous" />
-  <link rel="preload" href="@asset('fonts/roboto/Roboto-Italic.woff2')" as="font" crossorigin="anonymous" />
-  <link rel="preload" href="@asset('fonts/oswald/Oswald-Regular.woff2')" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ get_template_directory_uri() . '/resources/fonts/roboto/Roboto-Regular.woff2' }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ get_template_directory_uri() . '/resources/fonts/roboto/Roboto-Italic.woff2' }}" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="{{ get_template_directory_uri() . '/resources/fonts/oswald/Oswald-Regular.woff2' }}" as="font" crossorigin="anonymous" />
   <link rel="apple-touch-icon" sizes="180x180" href="@asset('images/favicon/apple-touch-icon.png')">
   <link rel="icon" type="image/png" sizes="32x32" href="@asset('images/favicon/favicon-32x32.png')">
   <link rel="icon" type="image/png" sizes="16x16" href="@asset('images/favicon/favicon-16x16.png')">
