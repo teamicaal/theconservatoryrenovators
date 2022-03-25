@@ -26,6 +26,19 @@ Wraith is built using the Roots stack of [Bedrock](https://roots.io/bedrock/) an
 - [Node.js](https://nodejs.org/en/) >=16
 - [Yarn](https://yarnpkg.com/)
 
+## Key differences in new version
+
+- Compiling is now handled by [Bud](https://github.com/roots/bud), replacing Laravel mix. It’s now even faster
+- No more `webpack.mix.js` file, instead there is a new `bud.config.js` file where you specify a proxy URL for your local server
+- PHP 8.1 is now the minimum requirement
+- Node 16 is now the minimum requirement
+- `yarn dev` is now the default command to start watching files
+- `yarn build` now works for both staging and production environments, no more need for `yarn build:production`
+- The landing page flexible content blocks and page template have now been incorporated into the global blocks and default page template, now with more blocks as standard
+- It’s now possible to build Laravel components into websites using the [Acorn](https://roots.io/acorn/) plugin from Roots
+- All tailwind spacing classes now use the default values e.g. 1 = .25rem, 4 = 1rem etc
+- all `^-grey-` tailwind classes are now `^-grey-`
+
 ## Quick Install
 
 **Requirements**
