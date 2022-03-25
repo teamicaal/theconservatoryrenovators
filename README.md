@@ -21,9 +21,9 @@ Wraith is built using the Roots stack of [Bedrock](https://roots.io/bedrock/) an
 
 ## Requirements
 
-- PHP >= 8.0
+- PHP >= 8.1
 - Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
-- [Node.js](https://nodejs.org/en/) >=16
+- [Node.js](https://nodejs.org/en/) >=16 (recommend 16.14.2)
 - [Yarn](https://yarnpkg.com/)
 
 ## Key differences in new version
@@ -45,8 +45,10 @@ Wraith is built using the Roots stack of [Bedrock](https://roots.io/bedrock/) an
 - [Gitub CLI](https://github.com/cli/cli#installation)
 - GitHub Command Line Tools (installed from GitHub Desktop app)
 - [wp dotenv CLI](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
+- [Laravel Valet](https://laravel.com/docs/9.x/valet)
+- Local MySQl server - [guide for installing with brew](https://flaviocopes.com/mysql-how-to-install/)
 
-We have created a terminal command to help you get started with a new working repo in < 1 minute. It's recommdeded to set this up as a bash command, so you can specify a project name to run all commands. Some elements of these commands will change depending on your folder OS, folder structure and text editor of choice, but here's an example for [Atom](https://atom.io), using [Hyper](https://hyper.is) terminal':
+We have created a terminal command to help you get started with a new working repo in a few minutes. It's recommended to set this up as a bash command, so you can specify a project name to run all commands programmatically. Some elements of these commands will change depending on your OS, folder structure and text editor of choice, but here's an example for MacOS, using [Atom](https://atom.io) text editor and [Hyper](https://hyper.is) terminal:
 
 **Atom**
 ```
@@ -75,7 +77,7 @@ composer install
 yarn
 ```
 
-Once this is done, you just need to set up a local database and run `yarn dev` in the theme directory.
+Once this is done, you just need to set up a local database, configure your `bud.config.js` file and run `yarn dev` in the theme directory.
 
 ## Manual Installation
 
