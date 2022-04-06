@@ -62,6 +62,8 @@ rm -rf wraith.git
 git clone https://github.com/teamicaal/$1.git
 cd $1
 valet link $1
+valet secure $1
+valet isolate php@8.1
 github
 atom ~/Local\ Sites/$1
 open -a Hyper
