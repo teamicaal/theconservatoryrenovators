@@ -1,0 +1,18 @@
+@import './fonts';
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './global';
+@import './forms';
+@import './wp-classes';
+
+@import './layouts/page';
+@import './layouts/header';
+@import './layouts/footer';
+
+@import "slick-carousel/slick/slick.scss";
+@import "slick-carousel/slick/slick-theme.scss";
+
+@import "@fancyapps/fancybox/dist/jquery.fancybox.css";

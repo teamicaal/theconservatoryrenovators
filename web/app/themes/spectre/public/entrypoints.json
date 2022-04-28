@@ -1,0 +1,27 @@
+{
+  "app": {
+    "js": [
+      "runtime.194772.js",
+      "vendor/app.b4f1f3.js",
+      "app.b72196.js"
+    ],
+    "css": [
+      "app.900d36.css"
+    ],
+    "dependencies": [
+      "jquery"
+    ]
+  },
+  "editor": {
+    "js": [
+      "runtime.194772.js",
+      "editor.e21e78.js"
+    ],
+    "css": [
+      "editor.31d6cf.css"
+    ],
+    "dependencies": [
+      "wp-blocks"
+    ]
+  }
+}
