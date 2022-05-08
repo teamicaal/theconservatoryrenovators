@@ -32,13 +32,13 @@
     <div id="panel-share" class="fixed md:absolute invisible opacity-0 transition">
       <div class="panel-share bg-white rounded-sm shadow-lg arrow-bottom px-4 pb-4 md:py-2">
         <button type="button" class="panel-share-close md:hidden block w-full px-4 py-2 mb-2 uppercase tracking-widest text-center text-xs text-gray-800 hover:text-primary focus:outline-none">Close</button>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(wp_get_shortlink()); ?>&t=<?php the_title(); ?>" target="_blank" class="px-4 mx-1 md:mx-0 py-4">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ rawurlencode(wp_get_shortlink()) }}&t={{ rawurlencode(get_the_title()) }}" target="_blank" class="px-4 mx-1 md:mx-0 py-4">
           <i class="fab fa-facebook"></i>
         </a>
-        <a href="https://twitter.com/share?text=<?php echo urlencode(the_title()); ?>%20from%20<?php bloginfo('name'); ?>&url=<?php echo urlencode(wp_get_shortlink()); ?>&via=Double_Glazing_" target="_blank" class="px-4 mx-1 md:mx-0 py-4">
+        <a href="https://twitter.com/share?text={{ urlencode(get_the_title()) }}%20from%20{{ rawurlencode(bloginfo('name')) }}>&url={{ rawurlencode(wp_get_shortlink()) }}&via=Double_Glazing_" target="_blank" class="px-4 mx-1 md:mx-0 py-4">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(wp_get_shortlink()); ?>&title=<?php echo urlencode(the_title()); ?>%20from%20<?php bloginfo('name'); ?>&summary=&source=" target="_blank" class="px-4 mx-1 md:mx-0 py-4">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ rawurlencode(wp_get_shortlink()) }}&title={{ urlencode(get_the_title()) }}%20from%20{{ rawurlencode(bloginfo('name')) }}>&summary=&source=" target="_blank" class="px-4 mx-1 md:mx-0 py-4">
           <i class="fab fa-linkedin"></i>
         </a>
         <a href="mailto:?subject={!! get_bloginfo('name') !!}%20Website&body=Check%20out%20this%20page%20I%20found%3A%20{{ urlencode(home_url($_SERVER['REQUEST_URI'])) }}" target="_blank" class="px-4 mx-1 md:mx-0 py-4">
@@ -69,12 +69,12 @@
     <div class="toggler"><i class="chevron bg-primary fas fa-chevron-right rounded text-sm"></i></div>
 
         @while (have_rows('ctas' ,'option'))
-          <?php
+          @php
             the_row();
             $icon = get_sub_field('icon');
             $label = get_sub_field('label');
             $link = get_sub_field('link');
-          ?>
+          @endphp
           <a href=" {!! $link !!}">
             <div class="flex flex-col">
               <div class="text-center"><i class="fas {!! $icon !!}"></i></div>
