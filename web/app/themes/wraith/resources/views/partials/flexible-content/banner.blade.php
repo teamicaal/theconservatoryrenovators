@@ -4,7 +4,6 @@ $images_webp = get_sub_field('images_webp');
 $title = get_sub_field('title');
 $subtitle = get_sub_field('subtitle');
 $paragraph = get_sub_field('paragraph');
-$icon = get_sub_field('icon');
 @endphp
 @if( get_sub_field('title_h1') )
   @php $h = 'h1' @endphp
@@ -67,5 +66,3 @@ $icon = get_sub_field('icon');
     @endif
   </div>
 </section>
-
-@include('partials.icons.' . $icon);
