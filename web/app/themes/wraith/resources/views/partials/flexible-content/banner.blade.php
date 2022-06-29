@@ -68,4 +68,4 @@ $icon = get_sub_field('icon');
   </div>
 </section>
 
-@include('partials.icons.' . $icon . '.blade.php');
+@include('partials.icons.' . $icon);
