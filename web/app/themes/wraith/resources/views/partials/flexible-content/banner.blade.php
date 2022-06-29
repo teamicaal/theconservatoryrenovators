@@ -4,6 +4,7 @@ $images_webp = get_sub_field('images_webp');
 $title = get_sub_field('title');
 $subtitle = get_sub_field('subtitle');
 $paragraph = get_sub_field('paragraph');
+$paragraph = get_sub_field('icon');
 @endphp
 @if( get_sub_field('title_h1') )
   @php $h = 'h1' @endphp
@@ -66,3 +67,5 @@ $paragraph = get_sub_field('paragraph');
     @endif
   </div>
 </section>
+
+@include('partials.' . $icon . '.blade.php');

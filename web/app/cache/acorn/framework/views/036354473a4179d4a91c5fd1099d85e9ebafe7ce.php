@@ -4,6 +4,7 @@ $images_webp = get_sub_field('images_webp');
 $title = get_sub_field('title');
 $subtitle = get_sub_field('subtitle');
 $paragraph = get_sub_field('paragraph');
+$paragraph = get_sub_field('icon');
 ?>
 <?php if( get_sub_field('title_h1') ): ?>
   <?php $h = 'h1' ?>
@@ -70,4 +71,6 @@ $paragraph = get_sub_field('paragraph');
     <?php endif; ?>
   </div>
 </section>
+
+<?php echo $__env->make('partials.' . $icon . '.blade.php', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
 <?php /**PATH /Users/mattpickles/Local Sites/wraith/web/app/themes/wraith/resources/views/partials/flexible-content/banner.blade.php ENDPATH**/ ?>
