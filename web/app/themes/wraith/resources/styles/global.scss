@@ -1,8 +1,10 @@
-main#primary {
-  margin-top: 57px;
+body:not(.page-template-template-login) {
+  main#primary {
+    margin-top: 57px;
 
-  @screen lg {
-    margin-top: 126px;
+    @screen lg {
+      margin-top: 126px;
+    }
   }
 }
 
