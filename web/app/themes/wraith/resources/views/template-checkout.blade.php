@@ -21,7 +21,7 @@
           <div class="flex w-full justify-between">
            <div class="flex flex-wrap">
             <div class="w-24 lg:w-48 mr-4 lg:mr-8">
-              <div class="mb-1 embed embed-1by1 bg-gray-100 rounded-sm overflow-hidden"></div>
+              <div class="mb-1 embed-1by1 bg-gray-100 rounded-sm overflow-hidden"></div>
             </div>
             <div class="flex flex-col pt-2 lg:pt-4">
               <h2 class="text-black-800 text-lg font-bold mb-2 lg:mb-4">Basic T-shirt</h2>

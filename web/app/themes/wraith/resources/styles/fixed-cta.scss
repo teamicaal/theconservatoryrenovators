@@ -1,0 +1,173 @@
+.fixed-side {
+    position: fixed;
+    display: flex;
+    bottom: -80px;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    transition: all 0.3s ease;
+  
+    @screen lg {
+      display: block;
+      top: 50%;
+      right: -240px;
+      bottom: unset;
+      left: unset;
+  
+      &.fixed-desktop {
+        right: -160px;
+      }
+    }
+  
+    &.fixed-side-show {
+      bottom: -1px;
+      transition: all 0.3s ease;
+    }
+  
+    > a {
+      width: 33.333vw;
+  
+      &:nth-child(2) {
+        width: 33.334vw;
+      }
+    }
+  
+    .one-cta {
+      @apply bg-primary-light ;
+    }
+  
+    .two-cta {
+      @apply bg-primary ;
+    }
+  
+    .three-cta {
+      @apply bg-primary-dark ;
+    }
+  
+    svg {
+      font-size: 1rem;
+      color: #fff;
+  
+      @screen md {
+        margin-right: 0.5rem;
+      }
+  
+      @screen lg {
+        font-size: 1.25rem;
+        margin-right: 0;
+      }
+    }
+  
+    p {
+      color: #fff;
+      white-space: nowrap;
+      padding-right: 1.5rem;
+      margin-bottom: 0;
+    }
+  
+    .side-content:hover {
+      background: transparent;
+    }
+  
+    .one-side,
+    .two-side,
+    .three-side {
+      display: flex;
+      justify-content: space-around;
+      height: 50px;
+    }
+  
+    .side-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      left: 0;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        @apply bg-primary-dark ;
+        
+        color: #fff;
+        transition: all 0.3s ease;
+      }
+  
+      svg {
+        color: #fff;
+      }
+  
+      p {
+        display: none;
+  
+        @screen md {
+          display: block;
+        }
+      }
+    }
+  
+    @screen lg {
+      > a {
+        width: auto;
+  
+        &:nth-child(2) {
+          width: auto;
+        }
+      }
+  
+      .one-cta,
+      .two-cta,
+      .three-cta {
+        background: transparent;
+      }
+  
+      .one-side,
+      .two-side,
+      .three-side {
+        position: relative;
+        display: block;
+        height: 64px;
+        width: 224px;
+      }
+  
+      .one-side .side-content {
+        @apply bg-primary-light ;
+      }
+  
+      .two-side .side-content {
+        @apply bg-primary ;
+      }
+  
+      .three-side .side-content {
+        @apply bg-primary-dark ;
+      }
+  
+      .side-content {
+        position: absolute;
+        width: 100%;
+  
+        &:hover {
+          @apply bg-primary-dark ;
+          left: -160px;
+          color: #fff;
+        }
+      }
+  
+      .icon-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 64px;
+        height: 64px;
+      }
+    }
+  
+    @media screen and (max-width: 1024px) {
+      .one-side, .two-side, .three-side {
+        display: block;
+        .side-content {
+          justify-content: center;
+          padding: 1rem;
+        }
+      }
+    }
+  
+  }

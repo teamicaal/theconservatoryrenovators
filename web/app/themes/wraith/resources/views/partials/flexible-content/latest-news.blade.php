@@ -18,7 +18,7 @@
                 <a href="@permalink" class="uppercase font-display text-sm tracking-widest text-primary hover:text-black">View Post</a>
               </div>
               <div class="w-full sm:w-1/3 md:mr-4 relative rounded-sm overflow-hidden" style="min-height: 200px;">
-                <img data-src="@thumbnail(false)" src="@thumbnail('lozad', false)" width="100%" height="auto" alt="@title" class="lozad object-cover-absolute w-full h-full absolute">
+                <img data-src="@thumbnail('4by3-md', false)" src="@thumbnail('lozad', false)" width="100%" height="auto" alt="@title" class="lozad object-cover-absolute w-full h-full absolute">
               </div>
             </div>
           </article>

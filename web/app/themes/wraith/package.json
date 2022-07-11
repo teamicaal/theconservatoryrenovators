@@ -27,6 +27,7 @@
     "@fortawesome/pro-solid-svg-icons": "^6.0.0",
     "lozad": "^1.16.0",
     "mixitup": "^3.3.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tailwind-children": "^0.5.0"
   }
 }

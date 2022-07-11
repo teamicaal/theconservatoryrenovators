@@ -1,14 +1,15 @@
 @php
   $title = get_sub_field('title');
+  $count = 0 ;
 @endphp
 
 <section class="py-12 bg-gray-100">
   <div class="container mx-auto">
       {!! $title ? '<h2 class="text-center font-bold text-3xl lg:text-4xl mb-8">' . $title . '</h2>' : null !!}
       <div class="flex flex-wrap justify-center">
-        @php
-          $count = count(get_sub_field('features'))
-        @endphp
+        @if( get_sub_field('features') )
+          @php $count = count(get_sub_field('features')); @endphp
+        @endif
         @if (have_rows('features'))
           @while (have_rows('features'))
           @php

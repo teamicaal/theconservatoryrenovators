@@ -11,8 +11,8 @@
             foreach( $images as $image ):
         @endphp
         <div>
-          <div class="embed embed-4by3 m-4">
-            <img class="lozad absolute object-cover w-full h-full inset-0" src="{{ $image['sizes']['lozad'] }}" data-src="{{ $image['sizes']['medium'] }}" alt="{{ $image['alt'] }}" itemprop="thumbnail">
+          <div class="embed-4by3 m-4">
+            <img class="lozad object-fit-cover w-full h-full inset-0" src="{{ $image['sizes']['lozad'] }}" data-src="{{ $image['sizes']['medium'] }}" alt="{{ $image['alt'] }}" itemprop="thumbnail">
           </div>
         </div>
         @endforeach

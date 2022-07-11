@@ -13,8 +13,8 @@
 			<div class="flex py-4 lg:py-8 flex-col {{ $i % 2 == 0 ? 'lg:flex-row-reverse flex-col' : 'lg:flex-row flex-col' }}">
 				@if( $image )
 					<div class="w-full lg:w-1/2">
-						<div class="embed embed-4by3 rounded-sm overflow-hidden">
-							<img data-src="{{ $image['url'] }}" alt="{{ $image_alt ? $image_alt : $image['alt'] }}" class="lozad absolute object-cover w-full h-full inset-0">
+						<div class="embed-4by3 rounded-sm overflow-hidden">
+							<img data-src="{{ $image['url'] }}" alt="{{ $image_alt ? $image_alt : $image['alt'] }}" class="lozad object-fit-cover w-full h-full inset-0">
 						</div>
 					</div>
 				@endif

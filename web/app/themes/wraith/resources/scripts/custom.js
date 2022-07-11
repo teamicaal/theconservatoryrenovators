@@ -74,6 +74,20 @@ import mixitup from 'mixitup';
     infinite: true,
   });
 
+  // Testimonials 
+  $('.testimonials-carousel').slick({
+    dots: true,
+    arrows: false,
+    fade: true,
+    cssEase: 'ease-in-out',
+    slidesToShow: 1,
+    slidestoScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    speed: 1000,
+    infinite: true,
+  });
+
   // Gallery Slider
   $('.slick-gallery-slider').slick({
     dots: false,
@@ -101,6 +115,25 @@ import mixitup from 'mixitup';
       console.log('mix');
     }
   }
+
+  if( $('.mix-container-products').length ) {
+    var mixer = mixitup('.mix-container-products', {
+      load: {
+        filter: '.product-range-1'
+      }
+    });
+    if(mixer) {
+      console.log('mix');
+    }
+  }
+
+  // Smooth Scroll 
+  $('.btn-scroll').on('click', function (e) {
+    e.preventDefault()
+    $('html, body').animate(
+      { scrollTop: $($(this).attr('href')).offset().top - 150 }, 400
+    );
+  })
 
   // Cookie Policy
   $.fn.CookieNotice = function() {
@@ -202,4 +235,20 @@ import mixitup from 'mixitup';
       $('input[name="cvc"]').focus();
     }
   });
+
+  // Sticky CTA
+  $(window).on('scroll', function() {
+    if ($(document).scrollTop() > 300) {
+      $('.fixed-side').addClass('fixed-side-show');
+    } else {
+      $('.fixed-side').removeClass('fixed-side-show');
+    }
+
+    if ($(document).scrollTop() > 350) {
+      $('.fixed-side').addClass('fixed-desktop');
+    } else {
+      $('.fixed-side').removeClass('fixed-desktop');
+    }
+  });
+
 })(jQuery);

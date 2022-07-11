@@ -27,8 +27,9 @@ div {
   @apply font-sans font-light leading-normal text-gray-500;
 }
 
+// max-w-prose limits to 65ch width
 p {
-  @apply mb-1;
+  @apply mb-4 max-w-prose ;
 }
 
 a {
@@ -42,9 +43,17 @@ a {
 }
 
 .btn {
-  @apply text-sm font-sans font-normal uppercase tracking-widest rounded-sm px-7 py-5 leading-none;
-
+  @apply text-sm font-sans font-normal uppercase tracking-widest rounded-sm px-7 py-5 leading-none bg-gray-200 text-black text-center ;
   transition: 0.2s ease;
+    &:hover {
+      @apply bg-gray-500 ; 
+    }
+    &.primary { 
+      @apply bg-primary text-white text-center ; 
+      &:hover { 
+        @apply bg-primary-dark ; 
+      } 
+    }
 }
 
 .container {
@@ -106,21 +115,64 @@ a {
   }
 }
 
-.section_page-banner {
-  .content {
-    @screen md {
-      max-width: 660px;
-    }
+.section_ {
+  &page-banner{
+    .content {
+      @screen md {
+        @apply max-w-2xl ;
+      }
 
-    @screen lg {
-      max-width: 448px;
+      @screen lg {
+        @apply max-w-md ;
+
+      }
+    }
+  }
+  &testimonials {
+    .slick-dots {
+      @apply block text-right;
+      @screen sm {
+        bottom: 4.5px;
+      }
+      height: 4px;
+      li {
+        width: 35px;
+        height: 4px;
+        button {
+          @apply p-0 inline-block;
+          width: 35px;
+          height: 4px;
+          &::before {
+            @apply bg-white;
+            content: '';
+            width: 35px;
+            height: 4px;
+          }
+        }
+      }
+    }
+  }
+  &quoting-engine {
+    .engine-wrap {
+      @apply relative;
+      &::after {
+        @apply absolute border border-gray-600;
+        content: '';
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        z-index: -1;
+        transform: translateY(-50%);
+      }
     }
   }
 }
 
 #cookie-notice {
+  @apply hidden opacity-0 pointer-events-none -z-10 ;
   &.active {
-    @apply visible opacity-100 pointer-events-auto z-10;
+    @apply block opacity-100 pointer-events-auto z-10;
   }
 
   @screen md {
@@ -251,48 +303,34 @@ a {
 }
 
 .embed {
-  @apply relative block h-0 p-0 overflow-hidden;
+  &-21by9 {
+    @apply aspect-21/9 relative block p-0 overflow-hidden ; 
+  }
+  &-16by9 {
+    @apply aspect-16/9 relative block p-0 overflow-hidden ;
+  }
+  &-3by2 {
+    @apply aspect-3/2 relative block p-0 overflow-hidden ; 
+  }
+  &-4by3 {
+    @apply aspect-4/3 relative block p-0 overflow-hidden ;
+  }
+  &-3by4 {
+    @apply aspect-3/4 relative block p-0 overflow-hidden ;
+  }
+  &-7by10 {
+    @apply aspect-7/10 relative block p-0 overflow-hidden ;
+  }
+  &-1by1 {
+    @apply aspect-square relative block p-0 overflow-hidden ;
+  }
 }
-
-@layer utilities {
-  .embed-21by9 {
-    padding-bottom: 42.85714286% !important;
+.object-fit {
+  &-cover {
+    @apply absolute inset-0 w-full h-full object-cover ;
   }
-
-  .embed-16by9 {
-    padding-bottom: 56.25% !important;
-  }
-
-  .embed-3by2 {
-    padding-bottom: 66.66666667% !important;
-  }
-
-  .embed-4by3 {
-    padding-bottom: 75% !important;
-  }
-
-  .embed-3by4 {
-    padding-bottom: 125% !important;
-  }
-
-  .embed-7by10 {
-    padding-bottom: 143% !important;
-  }
-
-  .embed-1by1 {
-    padding-bottom: 100% !important;
-  }
-
-  .object-cover-absolute {
-    @apply absolute inset-0 w-full h-full;
-
-    object-fit: cover;
-  }
-
-  .object-contain {
-    @apply absolute inset-0 w-full h-full;
-
-    object-fit: contain;
+  &-contain {
+    @apply absolute inset-0 w-full h-full object-contain ;
   }
 }
 

@@ -37,49 +37,7 @@
             </a>
           </li>
           @endif
-          @if( $social_facebook && get_field('social_facebook_display', 'option') )
-          <li class="inline-block text-sm">
-            <a href="{{ $social_facebook }}" class="text-primary inline-block px-2 py-3">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          @endif
-          @if( $social_twitter && get_field('social_twitter_display', 'option') )
-          <li class="inline-block text-sm">
-            <a href="{{ $social_twitter }}" class="text-primary inline-block px-2 py-3">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          @endif
-          @if( $social_instagram && get_field('social_instagram_display', 'option') )
-          <li class="inline-block text-sm">
-            <a href="{{ $social_instagram }}" class="text-primary inline-block px-2 py-3">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-          @endif
-          @if( $social_youtube && get_field('social_youtube_display', 'option') )
-          <li class="inline-block text-sm">
-            <a href="{{ $social_youtube }}" class="text-primary inline-block px-2 py-3">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-          @endif
-          @if( $social_pinterest && get_field('social_pinterest_display', 'option') )
-          <li class="inline-block text-sm">
-            <a href="{{ $social_pinterest }}" class="text-primary inline-block px-2 py-3">
-              <i class="fab fa-pinterest"></i>
-            </a>
-          </li>
-          @endif
-          @if( $social_linkedin && get_field('social_linkedin_display', 'option') )
-          <li class="inline-block text-sm">
-            <a href="{{ $social_linkedin }}" class="text-primary inline-block px-2 py-3">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </li>
-          @endif
-        </ul>
+          @include('partials.components.social_icons')
         <div class="nav-toolbar nav-has-dropdowns">
           @if( has_nav_menu('toolbar') )
             {!! wp_nav_menu(['theme_location' => 'toolbar', 'menu_class' => 'nav nav-has-dropdowns list-reset']) !!}
@@ -113,11 +71,11 @@
         </nav>
       </div>
     </div>
-    <div id="cookie-notice" style="visibility: hidden; opacity: 0; pointer-events: none; z-index: -1;" class="relative md:fixed md:left-2 md:bottom-2 w-full transition">
+    <div id="cookie-notice" class="relative md:fixed md:left-2 md:bottom-2 w-full transition">
       <div class="p-1 md:p-2 relative bg-white rounded-sm shadow-lg text-center md:text-left">
         <button class="cookie-notice-dismiss hidden md:inline-block text-gray-900 hover:text-green-500 transition focus:outline-none px-2 py-0-25 absolute top-1 right-1"><i class="fa fa-times fa-sm"></i></button>
         <p class="text-sm text-gray-600 mb-0 md:pr-1">
-          We use cookies to improve your experience. By using our site you are agreeing to our <a href="/cookie-policy" class="text-gray-800 border-none">Cookie Policy</a>.
+          We use cookies to improve your experience. By using our site you are agreeing to our <a href="/cookie-policy/" class="text-gray-800 border-none">Cookie Policy</a>.
         </p>
         <button class="cookie-notice-dismiss md:absolute md:right-1 bottom-0 px-2 md:px-0-25 md:py-3 inline-block text-primary hover:text-green-500 transition text-sm focus:outline-none mt-0-25"><span class="md:hidden">Tap to accept & close</span><span class="hidden md:inline">Accept & Close</span></button>
       </div>

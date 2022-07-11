@@ -23,7 +23,7 @@
           <div class="flex w-full justify-between">
            <div class="flex flex-wrap">
             <div class="w-24 lg:w-48 mr-4 lg:mr-8">
-              <div class="mb-1 embed embed-1by1 bg-gray-100 rounded-sm overflow-hidden"></div>
+              <div class="mb-1 embed-1by1 bg-gray-100 rounded-sm overflow-hidden"></div>
             </div>
             <div class="flex flex-col pt-2 lg:pt-4">
               <h2 class="text-black-800 text-lg font-bold mb-2 lg:mb-4">Basic T-shirt</h2>
@@ -129,7 +129,7 @@
         <div class="flex lg:flex-wrap lg:justify-center snap-x overflow-x-scroll lg:overflow-hidden lg:-mx-4">
 
           <div class="w-64 lg:w-1/4 mb-4 px-4 snap-center" style="flex: 0 0 auto;">
-            <div class="mb-1 embed embed-1by1 bg-gray-100"></div>
+            <div class="mb-1 embed-1by1 bg-gray-100"></div>
             <div class="flex flex-col">
               <h2 class="text-gray-800 tracking-wide font-light text-xl mb-1">Wool Scarf</h2>
               <h3 id="price" class="text-black-800 font-bold text-xl">£24.00</h3>
@@ -137,7 +137,7 @@
            </div>
 
           <div class="w-64 lg:w-1/4 mb-4 px-4 snap-center" style="flex: 0 0 auto;">
-            <div class="mb-1 embed embed-1by1 bg-gray-100"></div>
+            <div class="mb-1 embed-1by1 bg-gray-100"></div>
             <div class="flex flex-col">
               <h2 class="text-gray-800 tracking-wide font-light text-xl mb-1">Wool Scarf</h2>
               <h3 id="price" class="text-black-800 font-bold text-xl">£24.00</h3>
@@ -145,7 +145,7 @@
            </div>
 
           <div class="w-64 lg:w-1/4 mb-4 px-4 snap-center" style="flex: 0 0 auto;">
-            <div class="mb-1 embed embed-1by1 bg-gray-100"></div>
+            <div class="mb-1 embed-1by1 bg-gray-100"></div>
             <div class="flex flex-col">
               <h2 class="text-gray-800 tracking-wide font-light text-xl mb-1">Wool Scarf</h2>
               <h3 id="price" class="text-black-800 font-bold text-xl">£24.00</h3>
@@ -153,7 +153,7 @@
            </div>
 
           <div class="w-64 lg:w-1/4 mb-4 px-4 snap-center" style="flex: 0 0 auto;">
-            <div class="mb-1 embed embed-1by1 bg-gray-100"></div>
+            <div class="mb-1 embed-1by1 bg-gray-100"></div>
             <div class="flex flex-col">
               <h2 class="text-gray-800 tracking-wide font-light text-xl mb-1">Wool Scarf</h2>
               <h3 id="price" class="text-black-800 font-bold text-xl">£24.00</h3>
