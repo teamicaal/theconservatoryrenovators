@@ -2,8 +2,16 @@
 
 @section('content')
 
+@php
+    $title = get_field('downloads_title', 'option');
+    $body = get_field('downloads_body', 'option');
+@endphp
 <div class="container mx-auto py-8 sm:py-12 lg:pt-20 mt-16 lg:mt-32">
-  <h1 class="py-3">Downloads</h1>
+  <h1 class="py-3">
+    {{ $title ? $title : 'Downloads' }}
+  </h1>
+  <div class="">{!! $body ? $body : null !!}</div>
+
 </div>
 <div class="bg-gray-100 pt-12 pb-8 md:pb-4">
   <div class="container mx-auto">
@@ -43,8 +51,8 @@
               <div class="bg-white rounded">
                 <div class="flex items-center">
                   <div style="width: 66px;">
-                    <div class="embed embed-7by10 bg-gray-dark">
-                      <img data-src="@if( $thumbnail ) {{ $thumbnail['url'] }} @else @asset('images/document-placeholder.jpg') @endif" class="lozad object-cover" width="66" height="auto" />
+                    <div class="embed-7by10 bg-gray-dark">
+                      <img data-src="@if( $thumbnail ) {{ $thumbnail['url'] }} @else @asset('images/document-placeholder.jpg') @endif" class="lozad object-fit-cover" width="66" height="auto" />
                     </div>
                   </div>
                   <div class="p-4">

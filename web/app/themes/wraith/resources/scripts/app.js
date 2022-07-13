@@ -53,8 +53,8 @@ import './custom';
 import './forms';
 
 import { config, library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare, faChevronUp, faChevronRight, faChevronDown, faChevronLeft, faPoundSign, faUser, faKey, faCheck  } from '@fortawesome/pro-solid-svg-icons';
+import { faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare, faChevronUp, faChevronRight, faChevronDown, faChevronLeft, faPoundSign, faUser, faKey, faCheck, faStar, faQuoteRight, faExpand, faHouse  } from '@fortawesome/pro-solid-svg-icons';
 import { faFacebook, faFacebookF, faTwitter, faInstagram, faYoutube, faPinterest, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 config.searchPseudoElements=true;
-library.add(faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faFacebook, faFacebookF, faTwitter, faInstagram, faYoutube, faPinterest, faLinkedin, faLinkedinIn, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare, faChevronUp, faChevronRight, faChevronDown, faChevronLeft, faPoundSign, faUser, faKey, faCheck );
+library.add(faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faFacebook, faFacebookF, faTwitter, faInstagram, faYoutube, faPinterest, faLinkedin, faLinkedinIn, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare, faChevronUp, faChevronRight, faChevronDown, faChevronLeft, faPoundSign, faUser, faKey, faCheck, faStar, faQuoteRight, faExpand, faHouse );
 dom.i2svg();

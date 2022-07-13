@@ -72,47 +72,6 @@ $social_pinterest = get_field('social_pinterest', 'option');
   </div>
   @endif
   <ul class="list-reset text-sm flex flex-wrap mt-4">
-    @if( $social_facebook && get_field('social_facebook_display', 'option') )
-    <li>
-      <a href="{{ $social_facebook }}" class="text-primary inline-block p-3">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-    </li>
-    @endif
-    @if( $social_twitter && get_field('social_twitter_display', 'option') )
-    <li>
-      <a href="{{ $social_twitter }}" class="text-primary inline-block p-3">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-    @endif
-    @if( $social_instagram && get_field('social_instagram_display', 'option') )
-    <li>
-      <a href="{{ $social_instagram }}" class="text-primary inline-block p-3">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-    @endif
-    @if( $social_youtube && get_field('social_youtube_display', 'option') )
-    <li>
-      <a href="{{ $social_youtube }}" class="text-primary inline-block p-3">
-        <i class="fab fa-youtube"></i>
-      </a>
-    </li>
-    @endif
-    @if( $social_pinterest && get_field('social_pinterest_display', 'option') )
-    <li>
-      <a href="{{ $social_pinterest }}" class="text-primary inline-block p-3">
-        <i class="fab fa-pinterest"></i>
-      </a>
-    </li>
-    @endif
-    @if( $social_linkedin && get_field('social_linkedin_display', 'option') )
-    <li>
-      <a href="{{ $social_linkedin }}" class="text-primary inline-block p-3">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </li>
-    @endif
+    @include('partials.components.social_icons')
   </ul>
 </ul>

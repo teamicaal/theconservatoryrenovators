@@ -18,8 +18,8 @@ $subtitle = get_sub_field('subtitle');
           @endphp
           @if( $page )
             <div class="w-64 lg:w-1/3 mb-4 px-4 snap-center mb-8" style="flex: 0 0 auto;">
-              <a href="{{ get_the_permalink($page->ID) }}" class="embed embed-4by3 rounded-sm overflow-hidden mb-4">
-                <img data-src="{{ get_the_post_thumbnail_url($page->ID) }}" src="{{ get_the_post_thumbnail_url($page->ID, 'lozad') }}" alt="{!! $custom_title ? $custom_title : $page->title; !!}" class="lozad object-cover-absolute" />
+              <a href="{{ get_the_permalink($page->ID) }}" class="embed-4by3 w-full rounded-sm overflow-hidden mb-4">
+                <img data-src="{{ get_the_post_thumbnail_url($page->ID) }}" src="{{ get_the_post_thumbnail_url($page->ID, 'lozad') }}" alt="{!! $custom_title ? $custom_title : $page->title; !!}" class="lozad object-fit-cover" />
               </a>
               <div class="bg-white rounded-sm p-4 sm:p-8 p-md-12">
                 <h4 class="text-2xl mb-4">{!! $custom_title ? $custom_title : get_the_title(); !!}</h4>

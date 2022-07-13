@@ -52,11 +52,11 @@
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress-full": "6.0",
+    "roots/wordpress": "6.0.1",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "advanced-custom-fields/advanced-custom-fields-pro": "^5.9.9",
-    "yoast/wordpress-seo": "^18.5.1",
+    "yoast/wordpress-seo": "^19.3",
     "roots/soil": "4.0.5",
     "roots/acorn": "^2.0"
   },
@@ -66,7 +66,12 @@
   },
   "config": {
     "optimize-autoloader": true,
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "composer/installers": true,
+      "ffraenz/private-composer-installer": true,
+      "roots/wordpress-core-installer": true
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

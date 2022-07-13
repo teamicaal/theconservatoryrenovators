@@ -7,6 +7,14 @@ footer {
       @apply text-white;
     }
 
+    .textwidget {
+      p {
+        a {
+          @apply text-primary font-semibold ; 
+        }
+      }
+    }
+
     h3 {
       @apply text-xl font-serif text-white uppercase tracking-widest border-b border-white pb-8 mb-8;
     }
