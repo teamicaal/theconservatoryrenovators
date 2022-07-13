@@ -34,10 +34,10 @@ Wraith is built using the Roots stack of [Bedrock](https://roots.io/bedrock/) an
 - Node 16 is now the minimum requirement
 - `yarn dev` is now the default command to start watching files
 - `yarn build` now works for both staging and production environments, no more need for `yarn build:production`
-- The landing page flexible content blocks and page template have now been incorporated into the global blocks and default page template, now with more blocks as standard
+- The landing page and holding page (Spectre) flexible content blocks have now been incorporated into the global blocks and default page template, now with more blocks as standard. There are also 2 default pages setup for a landing page (e.g. PPC campaign) and holding page
 - It’s now possible to build Laravel components into websites using the [Acorn](https://roots.io/acorn/) plugin from Roots
 - All tailwind spacing classes now use the default values e.g. 1 = .25rem, 4 = 1rem etc
-- all `^-grey-` tailwind classes are now `^-grey-`
+- all `^-grey-` tailwind classes are now `^-gray-`
 
 ## Quick Install
 
@@ -63,7 +63,7 @@ git clone https://github.com/teamicaal/$1.git
 cd $1
 valet link $1
 valet secure $1
-valet isolate php@8.1
+valet isolate php@8.1 --site=$s1
 github
 atom ~/Local\ Sites/$1
 open -a Hyper
@@ -104,6 +104,7 @@ Once this is done, you just need to set up a local database, configure your `bud
   ```
   cd new-repository
   valet link your-domain
+  valet secure your-domain valet isolate php@8.1 --site=your-domain
   ```
 7. Update environment variables in the `.env` file. Wrap values that may contain non-alphanumeric characters with quotes, or they may be incorrectly parsed. Note that we use `wr_` as the database prefix, as opposed to the default `wp_`
 
@@ -139,7 +140,7 @@ ssh -N -L 5555:127.0.0.1:3306 dev@s1.icaal.co.uk -vv
   yarn
   yarn dev
   ```
-13. Access WordPress admin at `https://example.com/wp/wp-admin/`
+13. Access WordPress admin at `https://example.com/wr-admin/`
 
 14. Update the password for the default WordPress user
 
