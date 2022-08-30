@@ -58,3 +58,14 @@ import { faFacebook, faFacebookF, faTwitter, faInstagram, faYoutube, faPinterest
 config.searchPseudoElements=true;
 library.add(faPhone, faPhoneSquare, faPrint, faEnvelope, faEnvelopeOpen, faMapMarkerAlt, faBars, faFacebook, faFacebookF, faTwitter, faInstagram, faYoutube, faPinterest, faLinkedin, faLinkedinIn, faCaretLeft, faCaretRight, faArrowRight, faTimes, faShare, faChevronUp, faChevronRight, faChevronDown, faChevronLeft, faPoundSign, faUser, faKey, faCheck, faStar, faQuoteRight, faExpand, faHouse );
 dom.i2svg();
+
+/**
+ * Vue config
+ * Make sure you first 'yarn add @roots/bud-vue'
+ * Make sure you enable the config in bud.config.js
+*/
+// import {createApp} from 'vue';
+// import App from './views/App.vue';
+//
+// const app = createApp(App);
+// app.mount('#app');

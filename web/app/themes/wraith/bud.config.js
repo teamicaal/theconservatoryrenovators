@@ -37,5 +37,10 @@ module.exports = async (app) => {
     /**
      * Development URL
      */
-    // .serve('https://wraith.test:3000');
+    // .serve('https://wraith.test:3000')
+
+   /**
+    * Vue config
+    */
+    // .template({template: app.path('@resources/views/page-vue.blade.php')})
 };
