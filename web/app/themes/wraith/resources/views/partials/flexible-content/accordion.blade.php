@@ -9,7 +9,7 @@ $custom_class = get_sub_field('custom_class');
     <div class="relative mx-auto flex lg:py-28 py-12 flex-wrap justify-around">
         <div class="lg:w-3/4 w-full lg:mx-0 mx-4 flex flex-wrap justify-around items-center relative z-10">
             <div class="w-full relative mb-4 md:mb-0 md:pr-8 pr-0 md:w-2/5 z-20">
-                <h3 class="text-base text-primary">{!! $subtitle !!}</h3>
+                <h3 class="title-display title-display-left text-base text-primary">{!! $subtitle !!}</h3>
                 <h2 class="text-2xl lg:text-3xl text-black">{{ $title ? $title : "FAQ's" }}</h2>
                 <div class="child-p:text-black text-sm mt-4">{!! $paragraph ? $paragraph : null !!}</div>
             </div>
