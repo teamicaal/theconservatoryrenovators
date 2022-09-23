@@ -64,6 +64,5 @@ $custom_class = get_sub_field('custom_class');
             </div>
             @endif
         </div>
-        @endif
     </div>
 </section>
