@@ -27,7 +27,7 @@ $custom_class = get_sub_field('custom_class');
                     @endphp
                     <div class="accordion {{ $i == 1 ? 'active' : null }}">
                         <h4 class="accordionTitle p-4 bg-neutral-200 text-tertiary mb-0 z-10 hover:bg-blue-400 hover:text-white cursor-pointer hover:drop-shadow-lg">{{ $title }}</h4>
-                        <div class="accordionBody p-4 -mt-2 pt-6 mb-3 z-0 border border-gray-200 rounded text-sm bg-gray-100">{!! $body !!}</div>
+                        <div class="accordionBody p-4 -mt-2 pt-6 mb-3 z-0 border border-gray-200 rounded text-sm bg-white">{!! $body !!}</div>
                     </div>
                     @endwhile
                     {{-- add cpt here --}}
