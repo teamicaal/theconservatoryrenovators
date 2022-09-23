@@ -27,12 +27,11 @@ $custom_class = get_sub_field('custom_class');
                 $accordion_paragraph = get_sub_field('accordion_paragraph');
                 @endphp
 
-                
                 @if($faq_schema)
                 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="accordion {{ $i == 1 ? 'active' : null }}">
                     <h4 itemprop="name" class="accordionTitle p-4 bg-neutral-200 text-tertiary mb-0 z-10 hover:bg-blue-400 hover:text-white cursor-pointer hover:drop-shadow-lg">{{ $title }}</h4>
                     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="accordionBody p-4 -mt-2 pt-6 mb-3 z-0 border border-gray-200 rounded text-sm bg-white">
-                        <div itemprop="text" >{!! $accordion_paragraph !!}</div>
+                        <div itemprop="text">{!! $accordion_paragraph !!}</div>
                     </div>
                 </div>
                 @else
@@ -41,11 +40,10 @@ $custom_class = get_sub_field('custom_class');
                     <div class="accordionBody p-4 -mt-2 pt-6 mb-3 z-0 border border-gray-200 rounded text-sm bg-white">{!! $accordion_paragraph !!}</div>
                 </div>
                 @endif
-
                 @endwhile
             </div>
             @endif
         </div>
     </div>
-    
+
 </section>
