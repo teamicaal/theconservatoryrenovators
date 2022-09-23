@@ -1,8 +1,8 @@
 @php
-$title = get_sub_field('title'); 
-$subtitle = get_sub_field('subtitle');   
+$title = get_sub_field('title');
+$subtitle = get_sub_field('subtitle');
 $paragraph = get_sub_field('paragraph');
-$custom_class = get_sub_field('custom_class');   
+$custom_class = get_sub_field('custom_class');
 @endphp
 
 <section id="accordion" class="{!! $custom_class ? $custom_class : ' '; !!}">
@@ -15,50 +15,23 @@ $custom_class = get_sub_field('custom_class');
             </div>
             @if ( have_rows( 'accordion_items' ) )
             @php
-                $i = 0 ;
+            $i = 0 ;
+            @endphp
+            <div class="w-full md:w-3/5 z-20">
+                @while ( have_rows( 'accordion_items' ) )
+                @php
+                the_row();
+                $i++;
+                $title = get_sub_field('accordion_title');
+                $body = get_sub_field('accordion_paragraph');
                 @endphp
-                <div class="w-full md:w-3/5 z-20">
-                    @while ( have_rows( 'accordion_items' ) )
-                    @php
-                        the_row();
-                        $i++;
-                        $title = get_sub_field('accordion_title');
-                        $body = get_sub_field('accordion_paragraph');
-                    @endphp
-                    <div class="accordion {{ $i == 1 ? 'active' : null }}">
-                        <h4 class="accordionTitle p-4 bg-neutral-200 text-tertiary mb-0 z-10 hover:bg-blue-400 hover:text-white cursor-pointer hover:drop-shadow-lg">{{ $title }}</h4>
-                        <div class="accordionBody p-4 -mt-2 pt-6 mb-3 z-0 border border-gray-200 rounded text-sm bg-white">{!! $body !!}</div>
-                    </div>
-                    @endwhile
-                    {{-- add cpt here --}}
-                    @php
-                    $faq_category = get_field('faq_category');
-                    @endphp
-    
-                    @if ($faq_category) 
-                    @query ([
-                        'post_type'      => 'faqs',
-                        'posts_per_page' => '-1',
-                        'tax_query'      => ([
-                            ([
-                                'taxonomy'   => 'faq-categories',
-                                'field'       => 'term_id',
-                                'terms'      => $faq_category
-                            ])
-                        ])
-                    ])
-                    @hasposts
-                    @posts
-                    <div class="accordion {{ $i == 1 ? 'active' : null }}">
-                        <h4 class="accordionTitle p-4 bg-gray-200 text-text hover:bg-text hover:text-gray-100 mb-0 z-10 rounded-lg hover:drop-shadow-lg">@title</h4>
-                        <div class="accordionBody p-4 -mt-2 pt-6 mb-3 z-0 border border-gray-200 rounded bg-gray-100">@content</div>
-                    </div>
-                    @endposts
-                    @endhasposts
-                    @endif
+                <div class="accordion {{ $i == 1 ? 'active' : null }}">
+                    <h4 class="accordionTitle p-4 bg-neutral-200 text-tertiary mb-0 z-10 hover:bg-blue-400 hover:text-white cursor-pointer hover:drop-shadow-lg">{{ $title }}</h4>
+                    <div class="accordionBody p-4 -mt-2 pt-6 mb-3 z-0 border border-gray-200 rounded text-sm bg-white">{!! $body !!}</div>
                 </div>
+                @endwhile
+            </div>
             @endif
         </div>
-        
     </div>
 </section>
