@@ -486,7 +486,7 @@ transition: right .2s ease;
     }
     &.active {
       .accordionTitle{
-        @apply bg-zinc-500 text-gray-100 drop-shadow-xl mb-0 z-10 ;
+        @apply bg-primary text-white drop-shadow-xl mb-0 z-10 ;
       }
       .accordionBody {
         display: block;
