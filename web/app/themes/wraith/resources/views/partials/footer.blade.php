@@ -30,7 +30,7 @@
   </div>
   <div class="text-center relative">
     <div id="panel-share" class="fixed md:absolute invisible opacity-0 transition">
-      <div class="panel-share bg-white rounded-sm shadow-lg arrow-bottom px-4 pb-4 md:py-2">
+      <div class="panel-share bg-white rounded-sm shadow-lg arrow-bottom lg:mb-0 mb-12 px-4 pb-4 md:py-2">
         <button type="button" class="panel-share-close md:hidden block w-full px-4 py-2 mb-2 uppercase tracking-widest text-center text-xs text-gray-800 hover:text-primary focus:outline-none">Close</button>
         <a href="https://www.facebook.com/sharer/sharer.php?u={{ rawurlencode(wp_get_shortlink()) }}&t={{ rawurlencode(get_the_title()) }}" target="_blank" class="px-4 mx-1 md:mx-0 py-4">
           <i class="fab fa-facebook"></i>
