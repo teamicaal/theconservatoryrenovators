@@ -31,5 +31,7 @@
   "images/favicon/browserconfig.xml": "images/favicon/browserconfig.xml",
   "images/.gitkeep": "images/.gitkeep",
   "app.js.map": "js/app.js.map",
-  "editor.js.map": "js/editor.js.map"
+  "app.hot-update.js.map": "app.b509620dec6e18be99b6.hot-update.js.map",
+  "editor.js.map": "js/editor.js.map",
+  "editor.hot-update.js.map": "editor.b509620dec6e18be99b6.hot-update.js.map"
 }
