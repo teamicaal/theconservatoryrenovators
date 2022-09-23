@@ -2,6 +2,7 @@
 $title = get_sub_field('title');
 $subtitle = get_sub_field('subtitle');
 $paragraph = get_sub_field('paragraph');
+$faq_schema = get_sub_field('faq_schema');
 $custom_class = get_sub_field('custom_class');
 @endphp
 
@@ -31,6 +32,30 @@ $custom_class = get_sub_field('custom_class');
                 </div>
                 @endwhile
             </div>
+            @endif
+
+            @if(faq_schema)
+            @if ( have_rows( 'accordion_items' ) )
+            @php
+            $i = 0 ;
+            @endphp
+            <div class="w-full md:w-3/5 z-20">
+                @while ( have_rows( 'accordion_items' ) )
+                @php
+                the_row();
+                $i++;
+                $title = get_sub_field('accordion_title');
+                $accordion_paragraph = get_sub_field('accordion_paragraph');
+                @endphp
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="accordion {{ $i == 1 ? 'active' : null }}">
+                    <h4 itemprop="name" class="accordionTitle p-4 bg-neutral-200 text-tertiary mb-0 z-10 hover:bg-blue-400 hover:text-white cursor-pointer hover:drop-shadow-lg">{{ $title }}</h4>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div itemprop="text" class="accordionBody p-4 -mt-2 pt-6 mb-3 z-0 border border-gray-200 rounded text-sm bg-white">{!! $accordion_paragraph !!}</div>
+                    </div>
+                </div>
+                @endwhile
+            </div>
+            @endif
             @endif
         </div>
     </div>
