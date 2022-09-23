@@ -6,7 +6,7 @@ $faq_schema = get_sub_field('faq_schema');
 $custom_class = get_sub_field('custom_class');
 @endphp
 
-<section id="accordion" class="{!! $custom_class ? $custom_class : ' '; !!} {{ '$faq_schema' ? '$faq_schema' : null }}">
+<section id="accordion" class="{!! $custom_class ? $custom_class : ' '; !!} {{ '$faq_schema' ? '$faq_schema' : hidden }}">
     <div class="relative mx-auto flex lg:py-20 py-12 flex-wrap justify-around">
         <div class="lg:w-3/4 w-full lg:mx-0 mx-4 flex flex-wrap justify-around items-center relative z-10">
             <div class="w-full relative mb-4 md:mb-0 md:pr-8 pr-0 md:w-2/5 z-20">
