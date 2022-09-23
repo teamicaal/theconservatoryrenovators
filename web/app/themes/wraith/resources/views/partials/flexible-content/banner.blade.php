@@ -46,7 +46,7 @@ $paragraph = get_sub_field('paragraph');
       </div>
     @endif
     <div class="container mx-auto border-b sm:border-none border-primary">
-      <!-- <div class="sm:w-[650px] w-full bg-white p-8 sm:p-12 relative z-20 mx-auto lg:ml-0 lg:mr-auto">
+      <div class="sm:w-[650px] w-full bg-white p-8 sm:p-12 relative z-20 mx-auto lg:ml-0 lg:mr-auto">
         {!! $subtitle ? '<h4 class="title-display title-display-left text-primary mb-4 ">' . $subtitle . '</h4>' : null !!}
         {!! $title ? '<' . $h . ' class="text-3xl md:text-4xl mb-4">' . $title . '</' . $h . '>' : null !!}
         {!! $paragraph ? '<p class="mb-1 text-sm sm:block hidden">' . $paragraph . '</p>' : null !!}
@@ -65,7 +65,7 @@ $paragraph = get_sub_field('paragraph');
             @endwhile
           </div>
         @endif
-      </div> -->
+      </div>
     </div>
     @if( count($images) > 1 )
     <div class="hidden sm:flex absolute z-20 bottom-0 right-0">
