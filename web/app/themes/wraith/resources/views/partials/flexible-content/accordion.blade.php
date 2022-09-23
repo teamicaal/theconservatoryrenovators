@@ -23,11 +23,11 @@ $custom_class = get_sub_field('custom_class');
                 the_row();
                 $i++;
                 $title = get_sub_field('accordion_title');
-                $body = get_sub_field('accordion_paragraph');
+                $accordion_paragraph = get_sub_field('accordion_paragraph');
                 @endphp
                 <div class="accordion {{ $i == 1 ? 'active' : null }}">
                     <h4 class="accordionTitle p-4 bg-neutral-200 text-tertiary mb-0 z-10 hover:bg-blue-400 hover:text-white cursor-pointer hover:drop-shadow-lg">{{ $title }}</h4>
-                    <div class="accordionBody p-4 -mt-2 pt-6 mb-3 z-0 border border-gray-200 rounded text-sm bg-white">{!! $body !!}</div>
+                    <div class="accordionBody p-4 -mt-2 pt-6 mb-3 z-0 border border-gray-200 rounded text-sm bg-white">{!! $accordion_paragraph !!}</div>
                 </div>
                 @endwhile
             </div>
