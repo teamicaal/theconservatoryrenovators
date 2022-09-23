@@ -8,6 +8,9 @@
         @if (get_row_layout() == 'alternating_content')
             @include('partials.flexible-content.alternating-content')
         @endif
+        @if (get_row_layout() == 'accordion')
+            @include('partials.flexible-content.accordion')
+        @endif
         @if (get_row_layout() == 'anchor')
             @include('partials.flexible-content.anchor')
         @endif

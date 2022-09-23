@@ -470,3 +470,33 @@ transition: right .2s ease;
     @apply overflow-visible;
   }
 }
+//accordion
+#accordion {
+  .accordion {
+    .accordionTitle {
+      @apply mb-3 ;
+    }
+    .accordionBody {
+      display: none;
+      > ul{
+        > li{
+          @apply list-disc ml-4 ;
+        }
+      }
+    }
+    &.active {
+      .accordionTitle{
+        @apply bg-zinc-500 text-gray-100 drop-shadow-xl mb-0 z-10 ;
+      }
+      .accordionBody {
+        display: block;
+        height: fit-content;
+        > ul{
+          > li{
+            @apply list-disc ml-4 ;
+          }
+        }
+      }
+    }
+  }
+}
