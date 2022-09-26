@@ -151,10 +151,7 @@ ssh -N -L 5555:127.0.0.1:3306 dev@s1.icaal.co.uk -vv
 17. You can run the following commands in the theme directory to prep the files for distribution
 - `yarn build` - Build theme for distribution (for staging or production)
 
-## Template Designs
-[XD Prototype](https://xd.adobe.com/view/ea1dcfa0-7040-40f3-97fd-9483e7c47c3b-bf4e/)
-
 ## Documentation
 
 Bedrock documentation is available at [https://roots.io/docs/bedrock/master/installation/](https://roots.io/docs/bedrock/master/installation/).
-Sage documentation is available at [https://roots.io/docs/sage/9.x/installation/](https://roots.io/docs/sage/9.x/installation/).
+Sage documentation is available at [https://roots.io/docs/sage/9.x/installation/](https://docs.roots.io/sage/10.x/installation/).
