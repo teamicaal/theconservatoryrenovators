@@ -106,6 +106,7 @@ Once this is done, you just need to set up a local database, configure your `bud
   valet link your-domain
   valet secure your-domain valet isolate php@8.1 --site=your-domain
   ```
+- If you're not using Valet, you will need to create a local host for your project, e.g. through Mamp, Xamp or another local PHP server.
 7. Update environment variables in the `.env` file. Wrap values that may contain non-alphanumeric characters with quotes, or they may be incorrectly parsed. Note that we use `wr_` as the database prefix, as opposed to the default `wp_`
 
 - Database variables
