@@ -52,7 +52,8 @@
         // Redirect to the media centre page
         return get_post_type_archive_link('media');
       } elseif( $redirect_to ) {
-        return $redirect_to;
+        wp_redirect($redirect_to);
+        exit;
       } else {
         return admin_url();
       }
