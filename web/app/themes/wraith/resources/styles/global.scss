@@ -29,7 +29,7 @@ div {
 
 // max-w-prose limits to 65ch width
 p {
-  @apply mb-4 max-w-prose ;
+  @apply mb-4 max-w-prose;
 }
 
 a {
@@ -43,17 +43,20 @@ a {
 }
 
 .btn {
-  @apply text-sm font-sans font-normal uppercase tracking-widest rounded-sm px-7 py-5 leading-none bg-gray-200 text-black text-center ;
+  @apply text-sm font-sans font-normal uppercase tracking-widest rounded-sm px-7 py-5 leading-none bg-gray-200 text-black text-center;
   transition: 0.2s ease;
+
+  &:hover {
+    @apply bg-gray-500;
+  }
+
+  &.primary {
+    @apply bg-primary text-white text-center;
+
     &:hover {
-      @apply bg-gray-500 ; 
+      @apply bg-primary-dark;
     }
-    &.primary { 
-      @apply bg-primary text-white text-center ; 
-      &:hover { 
-        @apply bg-primary-dark ; 
-      } 
-    }
+  }
 }
 
 .container {
@@ -108,6 +111,7 @@ a {
   }
 
   &.text-primary {
+
     &::before,
     &::after {
       background-color: #0076ff;
@@ -116,32 +120,38 @@ a {
 }
 
 .section_ {
-  &page-banner{
+  &page-banner {
     .content {
       @screen md {
-        @apply max-w-2xl ;
+        @apply max-w-2xl;
       }
 
       @screen lg {
-        @apply max-w-md ;
+        @apply max-w-md;
 
       }
     }
   }
+
   &testimonials {
     .slick-dots {
       @apply block text-right;
+
       @screen sm {
         bottom: 4.5px;
       }
+
       height: 4px;
+
       li {
         width: 35px;
         height: 4px;
+
         button {
           @apply p-0 inline-block;
           width: 35px;
           height: 4px;
+
           &::before {
             @apply bg-white;
             content: '';
@@ -152,9 +162,11 @@ a {
       }
     }
   }
+
   &quoting-engine {
     .engine-wrap {
       @apply relative;
+
       &::after {
         @apply absolute border border-gray-600;
         content: '';
@@ -170,7 +182,8 @@ a {
 }
 
 #cookie-notice {
-  @apply hidden opacity-0 pointer-events-none -z-10 ;
+  @apply hidden opacity-0 pointer-events-none -z-10;
+
   &.active {
     @apply block opacity-100 pointer-events-auto z-10;
   }
@@ -304,33 +317,41 @@ a {
 
 .embed {
   &-21by9 {
-    @apply aspect-21/9 relative block p-0 overflow-hidden ; 
+    @apply aspect-21/9 relative block p-0 overflow-hidden;
   }
+
   &-16by9 {
-    @apply aspect-16/9 relative block p-0 overflow-hidden ;
+    @apply aspect-16/9 relative block p-0 overflow-hidden;
   }
+
   &-3by2 {
-    @apply aspect-3/2 relative block p-0 overflow-hidden ; 
+    @apply aspect-3/2 relative block p-0 overflow-hidden;
   }
+
   &-4by3 {
-    @apply aspect-4/3 relative block p-0 overflow-hidden ;
+    @apply aspect-4/3 relative block p-0 overflow-hidden;
   }
+
   &-3by4 {
-    @apply aspect-3/4 relative block p-0 overflow-hidden ;
+    @apply aspect-3/4 relative block p-0 overflow-hidden;
   }
+
   &-7by10 {
-    @apply aspect-7/10 relative block p-0 overflow-hidden ;
+    @apply aspect-7/10 relative block p-0 overflow-hidden;
   }
+
   &-1by1 {
-    @apply aspect-square relative block p-0 overflow-hidden ;
+    @apply aspect-square relative block p-0 overflow-hidden;
   }
 }
+
 .object-fit {
   &-cover {
-    @apply absolute inset-0 w-full h-full object-cover ;
+    @apply absolute inset-0 w-full h-full object-cover;
   }
+
   &-contain {
-    @apply absolute inset-0 w-full h-full object-contain ;
+    @apply absolute inset-0 w-full h-full object-contain;
   }
 }
 
@@ -366,7 +387,7 @@ a {
 
 .box {
   position: relative;
-  border: 1px solid  #0076ff;
+  border: 1px solid #0076ff;
   background-color: rgb(251, 251, 251);
   padding: 0.75rem;
 
@@ -391,22 +412,23 @@ a {
 }
 
 .fixed-sidebar {
-padding: 0.5rem 0;
-position: fixed;
-bottom: 50%;
-right: -5px;
-width: 80px;
-transition: right .2s ease;
+  padding: 0.5rem 0;
+  position: fixed;
+  bottom: 50%;
+  right: -5px;
+  width: 80px;
+  transition: right .2s ease;
 
- path  {
-  transition: transform .2s ease;
-}
+  path {
+    transition: transform .2s ease;
+  }
 
   &.hide {
     right: -74px;
 
-     path  {
-      transform: rotateY(180deg) translateX(-80%);}
+    path {
+      transform: rotateY(180deg) translateX(-80%);
+    }
   }
 }
 
@@ -414,8 +436,7 @@ transition: right .2s ease;
   color: #fff;
 }
 
-.fixed-sidebar .chevron
- {
+.fixed-sidebar .chevron {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -470,33 +491,46 @@ transition: right .2s ease;
     @apply overflow-visible;
   }
 }
+
 //accordion
 #accordion {
   .accordion {
     .accordionTitle {
-      @apply mb-3 ;
+      @apply mb-3;
     }
+
     .accordionBody {
       display: none;
-      > ul{
-        > li{
-          @apply list-disc ml-4 ;
+
+      >ul {
+        >li {
+          @apply list-disc ml-4;
         }
       }
     }
+
     &.active {
-      .accordionTitle{
-        @apply bg-primary text-white drop-shadow-xl mb-0 z-10 ;
+      .accordionTitle {
+        @apply bg-primary text-white drop-shadow-xl mb-0 z-10;
       }
+
       .accordionBody {
         display: block;
         height: fit-content;
-        > ul{
-          > li{
-            @apply list-disc ml-4 ;
+
+        >ul {
+          >li {
+            @apply list-disc ml-4;
           }
         }
       }
     }
+  }
+}
+
+.trapezoid {
+  @screen lg {
+
+    clip-path: polygon(4% 0, 100% 0, 100% 100%, 0% 100%);
   }
 }

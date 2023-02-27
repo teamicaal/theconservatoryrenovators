@@ -4,17 +4,40 @@
   $subtitle = get_sub_field('subtitle');
 @endphp
 
-<section id="form-landing" class="py-16 lg:py-32 {{ $coloured_bg ? 'bg-primary' : 'bg-white' }}">
+<section id="form-landing" class="py-16  {{ $coloured_bg ? 'bg-primary' : 'bg-white' }}">
   <div class="container mx-auto">
-    <div class="flex flex-wrap lg:flex-row-reverse lg:items-center">
-      <div class="w-full lg:w-2/3 lg:pl-4 xl:pl-0">
-
-        <div class="bg-gray-100 rounded-sm h-auto w-full xl:w-3/4 ml-auto h-full py-4 pl-4 lg:py-8 lg:pl-8 lg:pr-4">
+    <div class="flex flex-col lg:flex-row lg:flex-row-reverse lg:items-start gap-6">
+      <div class="w-full lg:w-2/3 lg:pl-4 xl:pl-0 right">
+      
+        <div class="bg-gray-100 rounded-sm  w-full xl:w-3/4 ml-auto h-full py-4 pl-4 lg:py-8 lg:pl-8 lg:pr-4">
           <form class="conversion-form h-full" method="post">
             <div class="mr-4">
               <div class="bg-gray-200 mb-8 w-full h-[6px] relative">
                 <div class="progress-bar rounded-full bg-green-500 absolute top-0 left-0 h-[6px] max-w-full transition" style="width: 20%;"></div>
               </div>
+            </div>
+            <div class="w-full">
+              <h1 class="font-bold mb-4 text-3xl lg:text-5xl">{{ $title }}</h1>
+              <h3 class="text-xl mb-0 text-gray-800">{{ $subtitle }}</h3>
+              @if( have_rows('usp_list') )
+              <ul class="list-none py-0 px-0 mt-8">
+                @while( have_rows('usp_list') )
+                @php
+                the_row();
+                $usp = get_sub_field('usp');
+                @endphp
+                <li class="mb-4 text-lg flex items-center text-gray-900">
+                  <span class="mr-1 text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="fill-current" width="25px" height="25px" viewBox="0 -21 512.016 512" width="512pt">
+                      <path
+                        d="m234.667969 469.339844c-129.386719 0-234.667969-105.277344-234.667969-234.664063s105.28125-234.6679685 234.667969-234.6679685c44.992187 0 88.765625 12.8203125 126.589843 37.0976565 7.425782 4.78125 9.601563 14.679687 4.820313 22.125-4.796875 7.445312-14.675781 9.597656-22.121094 4.820312-32.640625-20.972656-70.441406-32.042969-109.289062-32.042969-111.746094 0-202.667969 90.921876-202.667969 202.667969 0 111.742188 90.921875 202.664063 202.667969 202.664063 111.742187 0 202.664062-90.921875 202.664062-202.664063 0-6.679687-.320312-13.292969-.9375-19.796875-.851562-8.8125 5.589844-16.621094 14.378907-17.472656 8.832031-.8125 16.617187 5.589844 17.472656 14.378906.722656 7.53125 1.085937 15.167969 1.085937 22.890625 0 129.386719-105.277343 234.664063-234.664062 234.664063zm0 0" />
+                      <path
+                        d="m261.332031 288.007812c-4.09375 0-8.191406-1.558593-11.304687-4.691406l-96-96c-6.25-6.253906-6.25-16.386718 0-22.636718s16.382812-6.25 22.632812 0l84.695313 84.695312 223.335937-223.339844c6.253906-6.25 16.386719-6.25 22.636719 0s6.25 16.382813 0 22.632813l-234.667969 234.667969c-3.136718 3.113281-7.230468 4.671874-11.328125 4.671874zm0 0" />
+                      </svg></span>
+                  {{ $usp }}
+                </li>
+                @endwhile
+              </ul>
+              @endif
             </div>
             @php
               $custom_step = false;
@@ -31,9 +54,9 @@
                   $step_title = get_sub_field('step_title');
                 @endphp
                 <div class="form-pane{{ $i == 1 ? ' active' : null }}">
-                  <div class="flex flex-wrap mb-8 pr-4">
+                  <div class="flex flex-wrap mb-8 pr-4 border-t border-gray-300 pt-4">
                     <div class="w-3/5">
-                      <h2 class="text-xl font-medium md:text-3xl mb-0">{{ $step_title }}</h2>
+                      <h2 class="text-xl font-medium md:text-xl mb-0">{{ $step_title }}</h2>
                     </div>
                     <div class="w-2/5 flex items-center justify-end">
                       <div class="bg-white rounded-sm">
@@ -64,7 +87,7 @@
                   @endif
                   <h6 class="pane-option-response mb-0 text-red-500 text-sm"></h6>
                   <div class="pr-4 mt-4 hidden sm:block">
-                    <button type="button" class="w-full rounded btn bg-green-500 text-white form-pane-submit">CONTINUE</button>
+                    <button type="button" class="w-full rounded btn !bg-green-500 !text-white form-pane-submit">CONTINUE</button>
                   </div>
                 </div>
               @endwhile
@@ -73,7 +96,7 @@
             <div class="form-pane h-full{{ $custom_step ? null : ' active' }}">
               <div class="flex flex-wrap items-center mb-8 pr-4">
                 <div class="w-3/5">
-                  <h2 class="text-xl font-medium md:text-3xl mb-0">Where are you located?</h2>
+                  <h2 class="text-xl font-medium md:text-xl mb-0">Where are you located?</h2>
                 </div>
                 <div class="w-2/5 flex items-center justify-end">
                   <div class="bg-white rounded-sm">
@@ -101,7 +124,7 @@
             <div class="form-pane h-full">
               <div class="flex flex-wrap items-center mb-8 pr-4">
                 <div class="w-3/5">
-                  <h2 class="text-xl font-medium md:text-3xl mb-0">Submit your quote request</h2>
+                  <h2 class="text-xl font-medium md:text-xl mb-0">Submit your quote request</h2>
                 </div>
                 <div class="w-2/5 flex items-center justify-end">
                   <div class="bg-white rounded-sm">
@@ -110,10 +133,10 @@
                 </div>
               </div>
               <div class="mb-4 pr-4">
-                <input class="w-full rounded border border-gray-dark p-4 rounded-md mb-4 details-input" type="text" name="first_name" placeholder="First Name">
-                <input class="w-full rounded border border-gray-dark p-4 rounded-md mb-4 details-input" type="text" name="last_name" placeholder="Last Name">
-                <input class="w-full rounded border border-gray-dark p-4 rounded-md mb-4 details-input" type="email" name="email" placeholder="Email">
-                <input class="w-full rounded border border-gray-dark p-4 rounded-md details-input" type="tel" name="phone" placeholder="Phone Number">
+                <input class="w-full border border-gray-dark p-4 rounded-md mb-4 details-input" type="text" name="first_name" placeholder="First Name">
+                <input class="w-full border border-gray-dark p-4 rounded-md mb-4 details-input" type="text" name="last_name" placeholder="Last Name">
+                <input class="w-full border border-gray-dark p-4 rounded-md mb-4 details-input" type="email" name="email" placeholder="Email">
+                <input class="w-full border border-gray-dark p-4 rounded-md details-input" type="tel" name="phone" placeholder="Phone Number">
                 <h6 class="details-response mb-0 text-red-500 text-sm"></h6>
               </div>
               <div class="pr-4">
@@ -151,32 +174,46 @@
         </div>
 
       </div>
-      <div class="w-full lg:w-1/3 mt-12 lg:mt-0">
-        <h1 class="font-bold mb-4 text-3xl lg:text-5xl{{ $coloured_bg ? ' text-white' : null }}">{{ $title }}</h1>
-        <h3 class="text-xl mb-0 {{ $coloured_bg ? 'text-white' : 'text-gray-800' }}">{{ $subtitle }}</h3>
-        @if( have_rows('usp_list') )
-        <ul class="list-none py-0 px-0 mt-8">
-          @while( have_rows('usp_list') )
-          @php
-          the_row();
-          $usp = get_sub_field('usp');
-          @endphp
-          <li class="mb-4 text-lg flex items-center {{ $coloured_bg ? 'text-white' : 'text-gray-900' }}">
-            <span class="mr-1 {{ $coloured_bg ? 'text-white' : 'text-primary' }}"><svg xmlns="http://www.w3.org/2000/svg" class="fill-current" width="25px" height="25px" viewBox="0 -21 512.016 512" width="512pt">
-                <path
-                  d="m234.667969 469.339844c-129.386719 0-234.667969-105.277344-234.667969-234.664063s105.28125-234.6679685 234.667969-234.6679685c44.992187 0 88.765625 12.8203125 126.589843 37.0976565 7.425782 4.78125 9.601563 14.679687 4.820313 22.125-4.796875 7.445312-14.675781 9.597656-22.121094 4.820312-32.640625-20.972656-70.441406-32.042969-109.289062-32.042969-111.746094 0-202.667969 90.921876-202.667969 202.667969 0 111.742188 90.921875 202.664063 202.667969 202.664063 111.742187 0 202.664062-90.921875 202.664062-202.664063 0-6.679687-.320312-13.292969-.9375-19.796875-.851562-8.8125 5.589844-16.621094 14.378907-17.472656 8.832031-.8125 16.617187 5.589844 17.472656 14.378906.722656 7.53125 1.085937 15.167969 1.085937 22.890625 0 129.386719-105.277343 234.664063-234.664062 234.664063zm0 0" />
-                <path
-                  d="m261.332031 288.007812c-4.09375 0-8.191406-1.558593-11.304687-4.691406l-96-96c-6.25-6.253906-6.25-16.386718 0-22.636718s16.382812-6.25 22.632812 0l84.695313 84.695312 223.335937-223.339844c6.253906-6.25 16.386719-6.25 22.636719 0s6.25 16.382813 0 22.632813l-234.667969 234.667969c-3.136718 3.113281-7.230468 4.671874-11.328125 4.671874zm0 0" />
-                </svg></span>
-            {{ $usp }}
-          </li>
-          @endwhile
-        </ul>
-        @endif
-      </div>
+      {{-- left --}}
+
+      <div class="w-full lg:w-1/3">
+           <div class="slick-offer w-full">
+            @if (have_rows('primary_offer'))
+              @while (have_rows('primary_offer')) @php the_row(); @endphp
+                <div class="flex items-start flex-col">
+                  <div class="relative w-[90%] mx-auto h-fit z-10 ">
+                    @include('partials.components.ribbon')
+                    <p class="text-white absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-100%] max-w-[20rem] font-bold m-0 p-0 whitespace-nowrap "> Window & Door Offer</p>
+                  </div>
+                    <div class="bg-[#E30617] w-[70%] translate-y-[-12%] shadow-md mx-auto">
+                      <div class="child-p:text-white child-p:text-center child-p:text-3xl child-p:leading-relaxed child-p:font-semibold pt-20 pb-8 child-p:m-0 ">@sub('offer')</div>
+                      <div class="h-4 w-full bg-white mt-10"></div>
+                      <div class="h-1 w-full bg-white mt-1"></div>
+                      <div class="h-full w-full flex items-center justify-center py-8 px-4 xs:px-0">
+                        <p class=" text-white font-bold text-lg uppercase text-center">@sub('subtitle')</p>
+                      </div>
+                    </div>
+
+                </div>
+              @endwhile
+            @endif
+           </div>
+
+       </div>
+
     </div>
   </div>
 </section>
+<div class="horizontal bg-[#E30617]">
+  <div class="flex flex-col lg:flex-row w-full child-div:flex-1 child-div:flex child-div:items-center child-div:justify-center child-div:p-8 child-div:flex-col">
+    <div class="bg-[#E30617] child-h4:text-white child-h4:font-bold child-h4:text-xl child-h4:text-center relative z-10">
+      @sub('horizontal_offer_right')
+    </div>
+    <div class="bg-[#548235] child-h4:text-white child-h4:font-bold child-h4:text-xl child-h4:text-center trapezoid">
+      @sub('horizontal_offer_left')
+    </div>
+  </div>
+</div>
 
 
 <script type="text/javascript">

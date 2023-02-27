@@ -73,6 +73,18 @@ import mixitup from 'mixitup';
     speed: 1000,
     infinite: true,
   });
+  $('.slick-offer').slick({
+    dots: false,
+    arrows: false,
+    fade: false,
+    cssEase: 'ease-in-out',
+    slidesToShow: 1,
+    slidestoScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    speed: 2000,
+    infinite: true,
+  });
 
   // Testimonials 
   $('.testimonials-carousel').slick({
