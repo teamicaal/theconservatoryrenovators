@@ -6,7 +6,7 @@
 
 <section id="why-choose-us" class="py-12 mix-blend-mode">
   <div class="container mx-auto">
-      {!! $title ? '<h2 class="text-center font-bold text-secondary text-2xl lg:text-3xl mb-12">' . $title . '</h2>' : null !!}
+      {!! $title ? '<h2 class="text-center font-bold text-primary text-2xl lg:text-3xl mb-12">' . $title . '</h2>' : null !!}
       <div class="flex flex-wrap justify-evenly">
         @if( get_sub_field('features') )
           @php $count = count(get_sub_field('features')); @endphp
@@ -25,8 +25,8 @@
                 @if( $icon )
                 <i class="fa fa-{{ $icon }} text-color text-3xl lg:text-4xl"></i>
                 @endif
-                {!! $title ? '<h3 class="font-bold text-secondary text-lg uppercase mt-4 mb-4">' . $title . '</h3>' : null !!}
-                {!! $paragraph ? '<p class="text-sm text-secondary font-normal leading-7 mb-0">' . $paragraph . '</p>' : null !!}
+                {!! $title ? '<h3 class="font-bold text-primary text-lg uppercase mt-4 mb-4">' . $title . '</h3>' : null !!}
+                {!! $paragraph ? '<p class="text-sm text-primary font-normal leading-7 mb-0">' . $paragraph . '</p>' : null !!}
               </div>
             </div>
 
