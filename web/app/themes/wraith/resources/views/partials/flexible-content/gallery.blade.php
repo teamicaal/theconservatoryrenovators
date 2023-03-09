@@ -9,7 +9,7 @@ $image_5 = get_sub_field('image_5');
 $image_6 = get_sub_field('image_6');
 @endphp
 
-<section class="section_gallery{!! $custom_class ? ' ' . $custom_class : ' bg-gray-100 md:py-24 py-20' !!}">
+<section id="gallery" class="section_gallery{!! $custom_class ? ' ' . $custom_class : ' bg-gray-100 md:py-24 py-20' !!}">
   <div class="container mx-auto">
     {!! $title ? '<h2 class="text-4xl text-center mb-8">' . $title . '</h2>' : null !!}
     <div class="flex flex-wrap gap-2 md:gap-4">

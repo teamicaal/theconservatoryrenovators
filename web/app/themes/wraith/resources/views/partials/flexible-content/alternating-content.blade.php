@@ -1,4 +1,4 @@
-<section class="py-8 lg:py-12">
+<section id="alternating-content" class="py-8 lg:py-12">
 	<div class="container mx-auto">
 		@php $i = 0; @endphp
 		@while(have_rows('rows'))

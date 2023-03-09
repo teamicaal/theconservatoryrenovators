@@ -12,7 +12,7 @@ $subtitle = get_sub_field('subtitle');
 $paragraph = get_sub_field('paragraph');
 @endphp
 
-<section class="py-16">
+<section id="gallery-text" class="py-16">
   <div class="container mx-auto">
     <div class="flex flex-wrap items-center">
       @if( $image_1 )
