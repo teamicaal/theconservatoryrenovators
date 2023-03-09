@@ -174,18 +174,21 @@
         </div>
 
       </div>
-      {{-- left --}}
 
+      
+      @php
+          $primary_offer = get_sub_field('primary_offer');
+      @endphp
       <div class="w-full lg:w-1/3">
-           <div class="slick-offer w-full">
+           <div class="{{ count($primary_offer) > 1 ? 'slick-offer' :'' }} w-full">
             @if (have_rows('primary_offer'))
               @while (have_rows('primary_offer')) @php the_row(); @endphp
                 <div class="flex items-start flex-col">
                   <div class="relative w-[90%] mx-auto h-fit z-10 ">
-                    @include('partials.components.ribbon')
+                    @include('partials.components.ribbon',['primary_colour' => '#9F0A15'])
                     <p class="text-white absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-100%] max-w-[20rem] font-bold m-0 p-0 whitespace-nowrap "> Window & Door Offer</p>
                   </div>
-                    <div class="bg-[#E30617] w-[70%] translate-y-[-12%] shadow-md mx-auto">
+                    <div class="bg-primary w-[70%] translate-y-[-12%] shadow-md mx-auto">
                       <div class="child-p:text-white child-p:text-center child-p:text-3xl child-p:leading-relaxed child-p:font-semibold pt-20 pb-8 child-p:m-0 ">@sub('offer')</div>
                       <div class="h-4 w-full bg-white mt-10"></div>
                       <div class="h-1 w-full bg-white mt-1"></div>
@@ -204,12 +207,12 @@
     </div>
   </div>
 </section>
-<div class="horizontal bg-[#E30617]">
+<div class="horizontal bg-primary">
   <div class="flex flex-col lg:flex-row w-full child-div:flex-1 child-div:flex child-div:items-center child-div:justify-center child-div:p-8 child-div:flex-col">
-    <div class="bg-[#E30617] child-h4:text-white child-h4:font-bold child-h4:text-xl child-h4:text-center relative z-10">
+    <div class="bg-primary child-h4:text-white child-h4:font-bold child-h4:text-xl child-h4:text-center relative z-10">
       @sub('horizontal_offer_right')
     </div>
-    <div class="bg-[#548235] child-h4:text-white child-h4:font-bold child-h4:text-xl child-h4:text-center trapezoid">
+    <div class="bg-secondary child-h4:text-white child-h4:font-bold child-h4:text-xl child-h4:text-center trapezoid">
       @sub('horizontal_offer_left')
     </div>
   </div>
