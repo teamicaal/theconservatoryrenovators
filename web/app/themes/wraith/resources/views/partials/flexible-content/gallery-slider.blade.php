@@ -2,7 +2,7 @@
   $images = get_sub_field('gallery_items');
 @endphp
 
-<section class="py-12 overflow-hidden">
+<section id="gallery-slider" class="py-12 overflow-hidden">
   <div class="container mx-auto">
     @if ($images)
       <div class="slick-gallery-slider slick-overflow-visible">
